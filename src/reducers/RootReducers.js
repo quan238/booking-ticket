@@ -1,7 +1,9 @@
-import {combineReducers} from "redux"
+import { combineReducers, createStore, applyMiddleware } from "redux";
+import getMovie from "./movieReducer/getMovie";
+import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
+  getMovie: getMovie,
+});
 
-    
-})
-export default rootReducer
+export const store = createStore(rootReducer, applyMiddleware(thunk));
