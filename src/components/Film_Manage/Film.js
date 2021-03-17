@@ -66,7 +66,32 @@ class Film extends Component {
     return (
       // film manage
 
-      <div className="container mt-5">
+      <div className="container mt-5 ">
+        <div className="film_manage">
+        <ul class="select_time">
+          <li>
+            <a
+              data-toggle="tab"
+              ng-click="initFilmUpComing()"
+              data-target="#upComingFilms"
+              aria-expanded="true"
+            >
+              <span>Đang Chiếu</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              data-toggle="tab"
+              ng-click="initFilmUpComing()"
+              data-target="#upComingFilms"
+              aria-expanded="true"
+            >
+              <span>Sắp Chiếu</span>
+            </a>
+          </li>
+        </ul>
+        </div>
         <Carousel
           additionalTransfrom={0}
           arrows
@@ -78,7 +103,7 @@ class Film extends Component {
           dotListClass=""
           draggable
           focusOnSelect={false}
-          infinite
+          infinite={false}
           itemClass=""
           keyBoardControl
           minimumTouchDrag={80}
@@ -91,7 +116,7 @@ class Film extends Component {
                 min: 1024,
               },
               items: 3,
-              partialVisibilityGutter: 40,
+             partialVisibilityGutter: 40,
             },
             mobile: {
               breakpoint: {
