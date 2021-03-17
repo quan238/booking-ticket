@@ -8,15 +8,35 @@ import Slider from "react-slick";
 import "../../../node_modules/react-multi-carousel/lib/styles.css";
 import Async from "react-async";
 
-// Import css files
-// Import css files
 class Film extends Component {
   // console.log(this.props.state)
-  async componentDidMount() {
-    await this.props.dispatch(getMovieAPI());
+
+  componentDidMount() {
+    //    comment
+    this.props.dispatch(getMovieAPI());
     console.log(this.props.movie);
   }
-
+  renderItem = () => {
+    return (
+      this.props.movie &&
+      this.props.movie.map((item, index) => {
+        console.log(item);
+        return (
+          <div className="film_column">
+            <div>
+              <div className="film-img">
+                <img src={item.hinhAnh} alt />
+              </div>
+              <div className="film_info">
+                <p className="film_title"> {item.tenPhim}</p>
+                <p className="film_time">{item.ngayKhoiChieu}</p>
+              </div>
+            </div>
+          </div>
+        );
+      })
+    );
+  };
   render() {
     console.log(this.props.movie);
     var settings = {
@@ -43,12 +63,6 @@ class Film extends Component {
         slidesToSlide: 1, // optional, default to 1.
       },
     };
-    const renderItem = () => {
-      const { movie } = this.props;
-      movie.map((item, index) => {
-        console.log(item);
-      });
-    };
     return (
       // film manage
 
@@ -57,7 +71,7 @@ class Film extends Component {
           additionalTransfrom={0}
           arrows
           autoPlay
-          autoPlaySpeed={1000}
+          autoPlaySpeed={2000}
           centerMode={false}
           className=""
           containerClass="container-with-dots"
@@ -101,7 +115,7 @@ class Film extends Component {
           slidesToSlide={2}
           swipeable
         >
-          <div className="film_column">
+          {/* <div className="film_column">
             <div>
               <div className="film-img">
                 <img
@@ -204,7 +218,7 @@ class Film extends Component {
                 <p className="film_time">Time</p>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* {this.renderItem()} */}
           {/* {this.props.movie.map((item, index) => {
             console.log(item);
@@ -237,14 +251,18 @@ class Film extends Component {
               </div>
             );
           })} */}
+          {this.renderItem()}
         </Carousel>
+        {/* <Carousel>
+        {this.renderItem()}
+        </Carousel> */}
       </div>
     );
   }
 }
 const mapStateToProps = (state) => {
   return {
-    movie: state.getMovie.result.results,
+    movie: state.getMovie.result,
   };
 };
 // const mapDispatchToProps = (dispatch) => {

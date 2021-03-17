@@ -8,9 +8,9 @@ export default class Loader extends Component {
       document.querySelector(".home-container").style.display = "none";
       setTimeout(() => {
         document.querySelector(".loading").remove();
-      
-        document.querySelector(".home-container").style.display="block"
-        document.querySelector(".home-container").style.transition = "opacity 5s";
+
+        document.querySelector(".home-container").style.display = "block";
+        document.querySelector(".home-container").style.transition = "all 5s";
       }, 2000);
     }, 100);
   }

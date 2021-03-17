@@ -5,10 +5,13 @@ import { GET_MOVIE } from "../types";
 
 export const getMovieAPI = () => {
   return (dispatch) => {
-    movieServices.fetchAll().then((result) => {
-      // console.log(result);
-      dispatch(createAction(GET_MOVIE, result.data));
-    });
+    movieServices
+      .fetchAll()
+    //   .then((response) => response.json())
+      .then((result) => {
+        // console.log(result);
+        dispatch(createAction(GET_MOVIE, result.data));
+      });
   };
 };
 
@@ -18,4 +21,3 @@ const getMovie = (movie) => {
     movie,
   };
 };
-export { getMovie };
