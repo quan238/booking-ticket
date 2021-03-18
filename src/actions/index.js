@@ -1,8 +1,8 @@
 // action creator
 
-export const createAction = (type, movie) => ({
+export const createAction = (type, payload) => ({
   type,
-  movie,
+  payload,
 });
 
 export const createActionType = (type) => ({

@@ -6,7 +6,7 @@ const stateDefault = {
 const getMovie = (state = stateDefault, action) => {
   switch (action.type) {
     case GET_MOVIE:
-      state.result = action.movie;
+      state.result = action.payload;
       console.log( state.result);
       return { ...state };
     default:

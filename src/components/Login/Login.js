@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import "./Login.scss";
-export default class Login extends Component {
+import { connect } from "react-redux";
+import { getUser } from "../../actions/authenticationActions/getUser";
+class Login extends Component {
+  componentDidMount() {
+    this.props.dispatch(getUser());
+    console.log(this.props.user);
+  }
   render() {
+    console.log(this.props.user);
     return (
       <div className="login">
         <div className="color-overlay" />
@@ -25,7 +32,7 @@ export default class Login extends Component {
               />
             </div>
             <button>Sign In</button>
-            <p style={{paddingTop:"30px",marginBottom:"0"}}>
+            <p style={{ paddingTop: "30px", marginBottom: "0" }}>
               Don't have the account? <a href="./signUp.html">Sign Up</a>
             </p>
           </form>
@@ -34,3 +41,14 @@ export default class Login extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.getUser.user,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
+
+export default connect(mapStateToProps)(Login);
