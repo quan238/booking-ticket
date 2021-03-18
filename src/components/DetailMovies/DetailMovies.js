@@ -8,7 +8,7 @@ class DetailMovies extends Component {
   }
   render() {
     return <div>
-        <Loader></Loader>
+        {/* <Loader></Loader> */}
         {/* <h1>af</h1> */}
        
     </div>;
