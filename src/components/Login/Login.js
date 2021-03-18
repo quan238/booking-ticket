@@ -7,8 +7,22 @@ class Login extends Component {
     this.props.dispatch(getUser());
     console.log(this.props.user);
   }
+  // getValueFromInput = (user) => {
+  //   let email = document.getElementById("email").value;
+  //   let password = document.getElementById("password").value;
+  //   console.log("email", email);
+  //   console.log("password", password);
+  // };
+  handleChangeValue = (event) => {
+    let { name, value } = event.target;
+    console.log(value);
+    // this.handleChangeValue(name, value);
+  };
   render() {
-    console.log(this.props.user);
+    // console.log(this.props.user);
+    // let user;
+    // let { email, password } = user;
+    // this.getValueFromInput();
     return (
       <div className="login">
         <div className="color-overlay" />
@@ -18,17 +32,25 @@ class Login extends Component {
             <div className="form-control_login">
               {/* <label>Email</label> */}
               <input
+                id="email"
                 type="email"
                 placeholder="example@gmail.com"
                 className="Email"
+                onChange={(event) => {
+                  this.handleChangeValue(event);
+                }}
               />
             </div>
             <div className="form-control_login">
               {/* <p>Password</p> */}
               <input
+                id="password"
                 type="password"
                 placeholder={123456}
                 className="Password"
+                onChange={(event) => {
+                  this.handleChangeValue(event);
+                }}
               />
             </div>
             <button>Sign In</button>
@@ -46,9 +68,6 @@ const mapStateToProps = (state) => {
   return {
     user: state.getUser.user,
   };
-};
-const mapDispatchToProps = (dispatch) => {
-  return {};
 };
 
 export default connect(mapStateToProps)(Login);
