@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./HomeHeader.scss";
+import {Link} from"react-router-dom"
 export default class HomeHeader extends Component {
   render() {
     return (
@@ -36,7 +37,7 @@ export default class HomeHeader extends Component {
           <div className="login_location">
             <div className="main-btn">
               <i className="fas fa-user-circle" />
-              <a href="./login.html">Đăng Nhập</a>
+              <Link to="/login">Đăng Nhập</Link>
             </div>
             <div className="dropdown">
               <button

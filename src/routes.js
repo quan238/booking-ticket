@@ -1,5 +1,6 @@
 import DetailMovies from "./components/DetailMovies/DetailMovies";
 import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
 
 const routesHome = [
   {
@@ -7,11 +8,11 @@ const routesHome = [
     exact: true,
     component: Home,
   },
-  // {
-  //     path: "/login",
-  //     exact: true,
-  //     component: UserLogin
-  // },
+  {
+    path: "/login",
+    exact: true,
+    component: Login,
+  },
   // {
   //     path: "/profile",
   //     exact: true,
