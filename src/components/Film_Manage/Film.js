@@ -4,9 +4,10 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { getMovieAPI } from "../../actions/movieActions/GetMovie";
 import { connect } from "react-redux";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import "../../../node_modules/react-multi-carousel/lib/styles.css";
-import Async from "react-async";
+// import Async from "react-async";
+import { navLink, Link } from "react-router-dom";
 
 class Film extends Component {
   // console.log(this.props.state)
@@ -22,10 +23,12 @@ class Film extends Component {
       this.props.movie.map((item, index) => {
         console.log(item);
         return (
-          <div className="film_column">
+          <div className="film_column" key={index}>
             <div>
               <div className="film-img">
-                <img src={item.hinhAnh} alt />
+                <Link to={`/details/movie/${item.maPhim}`}>
+                  <img src={item.hinhAnh} alt />
+                </Link>
               </div>
               <div className="film_info">
                 <p className="film_title"> {item.tenPhim}</p>
@@ -68,29 +71,29 @@ class Film extends Component {
 
       <div className="container mt-5 ">
         <div className="film_manage">
-        <ul class="select_time">
-          <li>
-            <a
-              data-toggle="tab"
-              ng-click="initFilmUpComing()"
-              data-target="#upComingFilms"
-              aria-expanded="true"
-            >
-              <span>Đang Chiếu</span>
-            </a>
-          </li>
+          <ul class="select_time">
+            <li>
+              <a
+                data-toggle="tab"
+                ng-click="initFilmUpComing()"
+                data-target="#upComingFilms"
+                aria-expanded="true"
+              >
+                <span>Đang Chiếu</span>
+              </a>
+            </li>
 
-          <li>
-            <a
-              data-toggle="tab"
-              ng-click="initFilmUpComing()"
-              data-target="#upComingFilms"
-              aria-expanded="true"
-            >
-              <span>Sắp Chiếu</span>
-            </a>
-          </li>
-        </ul>
+            <li>
+              <a
+                data-toggle="tab"
+                ng-click="initFilmUpComing()"
+                data-target="#upComingFilms"
+                aria-expanded="true"
+              >
+                <span>Sắp Chiếu</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <Carousel
           additionalTransfrom={0}
@@ -116,7 +119,7 @@ class Film extends Component {
                 min: 1024,
               },
               items: 3,
-             partialVisibilityGutter: 40,
+              partialVisibilityGutter: 40,
             },
             mobile: {
               breakpoint: {

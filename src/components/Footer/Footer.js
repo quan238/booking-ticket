@@ -101,11 +101,6 @@ export default class Footer extends Component {
                     <li>Trần Hồng Quân - 1959030</li>
                   </ul>
                 </div>
-                <div className="col-4">
-                  <div className="bct">
-                    <img src="./img/bct.png" alt />
-                  </div>
-                </div>
               </div>
             </div>
           </div>
