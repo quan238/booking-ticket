@@ -38,8 +38,7 @@ export default function Payment() {
         </div>
       </div>
       {/* End Time-Booking */}
-      <PaymentDetails></PaymentDetails>
+      {/* <PaymentDetails></PaymentDetails> */}
     </div>
-
   );
 }

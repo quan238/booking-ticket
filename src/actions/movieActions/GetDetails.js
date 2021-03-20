@@ -1,13 +1,15 @@
 import Axios from "axios";
-const getDetailsAPI = (movie_id) => {
+import { createAction } from "..";
+import { movieServices } from "../../services/Movies";
+import { GET_DETAIL_MOVIE } from "../types";
+
+export const getDetailsAPI = (movie_id) => {
   return (dispatch) => {
-    Axios({
-      url: "        ",
-      method: "GET",
-    })
-      .then((result) => {
-        console.log(result.data);
-      })
-      .then((err) => {});
+    movieServices.fetchDetailMovie(movie_id).then((result) => {
+      // console.log(result.data);
+      dispatch(createAction(GET_DETAIL_MOVIE, result.data));
+    });
   };
 };
+//
+// export default getDetailsAPI;

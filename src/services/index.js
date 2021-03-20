@@ -9,7 +9,11 @@ export default class MovieService {
       mimeType: "json",
     });
   }
+  fetchDetailMovie(maPhim) {
+    return Axios({
+      url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`,
+      method: "GET",
+      // mimeType: "json",
+    });
+  }
 }
-
-
-
