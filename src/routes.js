@@ -1,6 +1,7 @@
 import DetailMovies from "./components/DetailMovies/DetailMovies";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
+import Payment from "./components/Payment/Payment";
 
 const routesHome = [
   {
@@ -22,6 +23,11 @@ const routesHome = [
     path: "/details/movie/:id",
     exact: true,
     component: DetailMovies,
+  },
+  {
+    path: "/details/movie/:id/payment",
+    exact: true,
+    component: Payment,
   },
 ];
 export { routesHome };
