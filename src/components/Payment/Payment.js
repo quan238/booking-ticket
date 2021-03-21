@@ -1,5 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
 import PaymentDetails from "../PaymentDetails/PaymentDetails";
+import BookingChair from "./BookingChair";
 import PaymentHeader from "./PaymentHeader";
 
 export default function Payment() {
@@ -36,7 +38,11 @@ export default function Payment() {
             <span className="second">55</span>
           </p>
         </div>
+        <div className="container mt-5 ">
+          <BookingChair></BookingChair>
+        </div>
       </div>
+
       {/* End Time-Booking */}
       {/* <PaymentDetails></PaymentDetails> */}
     </div>

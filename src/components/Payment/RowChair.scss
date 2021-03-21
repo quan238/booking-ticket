@@ -1,0 +1,22 @@
+.chair-book {
+  background-color: gray;
+  padding: 10px;
+  margin: 10px;
+}
+.statusChair {
+  background-color: orange;
+  padding: 10px;
+  margin: 10px;
+  cursor: no-drop !important;
+  //  width:50px;
+  //  height: 50px;
+}
+.seat {
+  content: "\e909";
+}
+.chairBooked {
+  background-color: rgb(109, 238, 109);
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}

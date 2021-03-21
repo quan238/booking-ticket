@@ -27,18 +27,18 @@ class PaymentDetails extends Component {
   //     // let { id } = props.match.params;
   //     // console.log(id);
   //   }, []);
-//   renderRap = () => {
-//     return (
-//       this.props.detail_movie.heThongRapChieu &&
-//       this.props.detail_movie.heThongRapChieu.map((item, index) => {
-//         return (
-//           <div className="btn btn-success p-5">
-//             {item.maHeThongRap}
-//           </div>
-//         );
-//       })
-//     );
-//   };
+  //   renderRap = () => {
+  //     return (
+  //       this.props.detail_movie.heThongRapChieu &&
+  //       this.props.detail_movie.heThongRapChieu.map((item, index) => {
+  //         return (
+  //           <div className="btn btn-success p-5">
+  //             {item.maHeThongRap}
+  //           </div>
+  //         );
+  //       })
+  //     );
+  //   };
   render() {
     let { detail_movie } = this.props;
     // console.log(item)
@@ -46,17 +46,24 @@ class PaymentDetails extends Component {
     let heThongRap = "BHD-STAR";
     if (detail_movie.heThongRapChieu) {
       heThongRap = detail_movie.heThongRapChieu[0].maHeThongRap;
-        console.log(heThongRap);
+      console.log(heThongRap);
     }
     console.log(detail_movie);
-
+    console.log(this.props.rowPurchased);
     return (
       <div>
         <Payment></Payment>
         {/* Right Checkout */}
         <div className=" rightCheckout">
           <div className="all-contents">
-            <h1 className="price mt-3 mb-3">50.000 đ</h1>
+            <h1 className="price mt-5 mb-3">
+              {this.props.rowPurchased &&
+                this.props.rowPurchased
+                  .reduce((tongTien, chairbooked, index) => {
+                    return (tongTien += chairbooked.price);
+                  }, 0)
+                  .toLocaleString()}
+            </h1>
             <div className="booking-info">
               <div className="cinema-info mb-3">
                 <p>{detail_movie.biDanh}</p>
@@ -65,18 +72,30 @@ class PaymentDetails extends Component {
                 <p>{heThongRap}</p>
                 <p className="time">{detail_movie.ngayKhoiChieu}</p>
               </div>
-              <div
-                className="chair mb-3"
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                }}
-              >
-                <p className="chair-num" style={{ color: "#fb4226" }}>
-                  Ghế F13
-                </p>
-                <p style={{ color: "#44c020" }}>50.000 đ</p>
+              <div className="chair mb-3">
+                {this.props.rowPurchased &&
+                  this.props.rowPurchased.map((chairbooked, index) => {
+                    return (
+                      <div
+                        key={index}
+                        style={{ display: "block" }}
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <span
+                          className="chair-num mx-2"
+                          style={{ color: "#fb4226" }}
+                        >
+                          GHẾ: {chairbooked.number}
+                        </span>
+                        <span style={{ color: "#44c020" }}>
+                          GIÁ: {chairbooked.price}
+                        </span>
+                      </div>
+                    );
+                  })}
               </div>
               <div className="customer-info">
                 <input
@@ -104,7 +123,14 @@ class PaymentDetails extends Component {
               </div>
             </div>
           </div>
-          <button className="btn-order">Đặt Vé</button>
+          <button
+            className="btn-order"
+            onClick={() => {
+              alert("dat ve thanh cong");
+            }}
+          >
+            Đặt Vé
+          </button>
         </div>
         {/* End Right Checkout */}
       </div>
@@ -114,6 +140,7 @@ class PaymentDetails extends Component {
 const mapStateToProps = (state) => {
   return {
     detail_movie: state.getDetailMovie.result,
+    rowPurchased: state.getTicket.rowPurchased,
   };
 };
 export default connect(mapStateToProps)(PaymentDetails);

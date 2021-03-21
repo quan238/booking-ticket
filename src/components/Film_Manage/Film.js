@@ -21,7 +21,7 @@ class Film extends Component {
     return (
       this.props.movie &&
       this.props.movie.map((item, index) => {
-        console.log(item);
+        // console.log(item);
         return (
           <div className="film_column" key={index}>
             <div>
