@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Film_Manage.scss";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+  import Carousel from "react-multi-carousel";
+  import "react-multi-carousel/lib/styles.css";
 import { getMovieAPI } from "../../actions/movieActions/GetMovie";
 import { connect } from "react-redux";
 // import Slider from "react-slick";
@@ -105,9 +105,10 @@ class Film extends Component {
           containerClass="container-with-dots"
           dotListClass=""
           draggable
+          row="2"
           focusOnSelect={false}
           infinite={false}
-          itemClass=""
+          itemClass="2"
           keyBoardControl
           minimumTouchDrag={80}
           renderButtonGroupOutside={false}

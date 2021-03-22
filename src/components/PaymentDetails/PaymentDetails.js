@@ -6,6 +6,10 @@ import "./PaymentDetails.scss";
 import { getDetailsAPI } from "../../actions/movieActions/GetDetails";
 import Payment from "../Payment/Payment";
 // import { render } from "@testing-library/react";
+import swal from "sweetalert";
+// import { Link } from "react-router-dom";
+import Home from "../Home/Home";
+import { Redirect } from "react-router-dom";
 
 class PaymentDetails extends Component {
   //   console.log(props);
@@ -14,6 +18,7 @@ class PaymentDetails extends Component {
   //   const dispatch = useDispatch();
   // console.log(dispatc)
   //   useEffect(() => {
+
   componentDidMount() {
     let { id } = this.props.match.params;
     console.log(id);
@@ -39,17 +44,27 @@ class PaymentDetails extends Component {
   //       })
   //     );
   //   };
+
   render() {
     let { detail_movie } = this.props;
     // console.log(item)
-    console.log(this.props.detail_movie);
+    // console.log(this.props.detail_movie);
     let heThongRap = "BHD-STAR";
     if (detail_movie.heThongRapChieu) {
+      console.log(this.props.detail_movie);
       heThongRap = detail_movie.heThongRapChieu[0].maHeThongRap;
       console.log(heThongRap);
     }
-    console.log(detail_movie);
-    console.log(this.props.rowPurchased);
+    let cumRapChieu = [];
+    if (detail_movie.heThongRapChieu) {
+      if (detail_movie.heThongRapChieu[0].cumRapChieu) {
+        cumRapChieu = detail_movie.heThongRapChieu[0].cumRapChieu;
+        console.log(cumRapChieu);
+      }
+    }
+
+    // console.log(detail_movie);
+    // console.log(this.props.rowPurchased);
     return (
       <div>
         <Payment></Payment>
@@ -97,40 +112,68 @@ class PaymentDetails extends Component {
                     );
                   })}
               </div>
-              <div className="customer-info">
+              <form
+                className="customer-info"
+                ref="submitForm"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (e.target.checkValidity()) {
+                    swal(
+                      "Booking successfully",
+                      "You clicked the button!",
+                      "success"
+                    ).then(() => {
+                      //
+                      // <Redirect to="/"></Redirect>
+                      window.location.href = "/";
+                    });
+
+                    // <Link to="/" />;
+
+                    e.target.value = "";
+                  }
+                }}
+              >
                 <input
-                  type="email"
+                  type="text"
+                  // required
                   placeholder="E-Mail"
                   className="Email mb-3"
                 />
                 <input
                   type="tel"
                   placeholder="Phone"
+                  // required
                   className="Telephone mb-3"
                 />
                 <div className="discount mb-3">
                   <input type="text" placeholder="Mã giảm giá" />
                   <button className="btn-apply"> Áp dụng</button>
                 </div>
-              </div>
-              <div className="payment">
-                <p className="mb-2">Hình thức thanh toán</p>
-                <div className="paymentMethod">
-                  <input type="radio" name="payment" defaultValue="Visa" />
-                  <i className="fas fa-wallet pl-2 pr-2" />
-                  <label className="mb-0"> Visa, Master, JCB</label>
+                <div className="payment">
+                  <p className="mb-2">Hình thức thanh toán</p>
+                  <div className="paymentMethod">
+                    <input
+                      // required
+                      type="radio"
+                      name="payment"
+                      defaultValue="Visa"
+                    />
+                    <i className="fas fa-wallet pl-2 pr-2" />
+                    {/* <label className="mb-0"> Visa, Master, JCB</label> */}
+                  </div>
                 </div>
-              </div>
+                <button
+                  type="submit  "
+                  className="btn-order "
+                  style={{ background: "#f44336" }}
+                  onClick={(event) => {}}
+                >
+                  Đặt Vé
+                </button>
+              </form>
             </div>
           </div>
-          <button
-            className="btn-order"
-            onClick={() => {
-              alert("dat ve thanh cong");
-            }}
-          >
-            Đặt Vé
-          </button>
         </div>
         {/* End Right Checkout */}
       </div>

@@ -4,7 +4,7 @@ import PaymentDetails from "../PaymentDetails/PaymentDetails";
 import BookingChair from "./BookingChair";
 import PaymentHeader from "./PaymentHeader";
 
-export default function Payment() {
+function Payment() {
   return (
     <div>
       <PaymentHeader></PaymentHeader>
@@ -31,13 +31,7 @@ export default function Payment() {
             <p className="hour ng-binding">Hôm nay - 22:10 - RẠP 2</p>
           </div>
         </div>
-        <div className="righttitle">
-          <p className="info1">thời gian giữ ghế</p>
-          <p className="info2">
-            <span className="minute">04</span>:
-            <span className="second">55</span>
-          </p>
-        </div>
+
         <div className="container mt-5 ">
           <BookingChair></BookingChair>
         </div>
@@ -48,3 +42,10 @@ export default function Payment() {
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return 
+  ;
+};
+
+export default connect(mapStateToProps)(Payment);

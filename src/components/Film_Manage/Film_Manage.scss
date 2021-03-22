@@ -30,14 +30,14 @@
   margin-bottom: 10px;
 }
 .film-img {
-    height: 500px;
-    width: 100%;
+  height: 450px;
+  width: 100%;
+  border-radius: 5%;
 }
 .film-img img {
   width: 95%;
   height: 100%;
-  object-fit: contain;
-  border-radius: 3px;
+  // object-fit: contain;
   object-fit: cover;
 }
 .film_info {

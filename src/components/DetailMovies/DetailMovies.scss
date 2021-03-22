@@ -1,150 +1,175 @@
-// .banner {
-//   /* top: 0;
-//     left: 0; */
-//   width: 100%;
-//   height: 100%;
-//   position: absolute;
-//   display: flex;
-//   /* margin-top: 219px; */
-//   top: -100px;
-//   align-items: center;
-//   justify-content: center;
-// }
-// .container {
-//   width: 75% !important;
-//   position: relative;
-//   /* margin-top: 50px; */
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-// }
-// .banner::before {
-//   content: "";
-//   position: absolute;
-//   width: 100%;
-//   height: 74%;
-//   background: url("https://s3img.vcdn.vn/mobile/123phim/2021/02/bo-gia-16144973777370_215x318.png")
-//     no-repeat center top;
-//   background-size: cover;
-//   overflow: hidden;
-//   -webkit-filter: blur(15px);
-//   -moz-filter: blur(15px);
-//   -o-filter: blur(15px);
-//   -ms-filter: blur(15px);
-//   filter: blur(15px);
-//   -webkit-transform: scale(1.2, 1.2);
-//   -moz-transform: scale(1.2, 1.2);
-//   -o-transform: scale(1.2, 1.2);
-//   -ms-transform: scale(1.2, 1.2);
-//   transform: scale(1.2, 1.2);
-// }
-// .film-info {
-//   /* position: absolute; */
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   flex-direction: row;
-// }
-// .banner .info-image {
-//   /* position: absolute; */
-//   /* left: 10px; */
-// }
-// .banner .info-image img {
-//   width: 230px;
-//   height: 350px;
-
+.detail {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(10, 32, 41) !important;
+}
+.detail .banner {
+  /* top: 0;
+    left: 0; */
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  display: flex;
+  /* margin-top: 0px; */
+  /* margin-top: 219px; */
+  /* top: -100px; */
+  align-items: center;
+  justify-content: center;
+}
+.detail .banner .container {
+  width: 75% !important;
+  position: relative;
+  /* margin-top: 50px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.detail .banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 82%;
+  height: 80%;
+  // background: url(./imgb/1.png) no-repeat center top;
+  background-size: cover;
+  overflow: hidden;
+}
+.detail .banner .container .film-info {
+  /* position: absolute; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  
+}
+.detail .banner .container .film-info .info-image{
+    border-radius: 4%;
+    width: 230px;
+    height: 350px;
+}
+.detail .banner .container .film-info .info-image img {
+width: 100%;
 //   border-radius: 4%;
+  right: 70%;
+  object-fit: contain;
+}
+/* .banner .info-text p {
+    position: absolute;
+  } */
+.detail .banner .container .film-info .info .info-text1 p {
+  background-color: orangered;
+  border-radius: 4px;
+  padding: 0 5px;
+  display: inline-block;
+  text-align: center;
+}
+.detail .banner .container .film-info .info {
+  display: flex;
+  flex-direction: column;
+  /* position: absolute; */
+}
+.detail .banner .container .film-info .info .btnBuy {
+  font-size: 1.5rem;
+  background-color: orangered;
+  border-radius: 4px;
+  text-align: center;
+  margin: 20px 0;
+  /* width: 8%; */
+  border: none;
+}
+.detail .banner .container .film-info .info .btnBuy:focus {
+  outline: none;
+}
+.detail .banner .container .film-info .info .btnBuy:hover {
+  background-color: #b42a14;
+}
+.detail .box {
+  /* position: absolute; */
+  /* width: 300px; */
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.detail .box .percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+.detail .box .percent svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background: rgba(29, 26, 26, 0.664);
+  border-radius: 80px;
+}
+.detail .box .percent svg circle {
+  width: 150px;
+  height: 150px;
+  fill: none;
+  stroke-width: 10;
+  stroke: rgb(2, 2, 2);
+  transform: translate(5px, 5px);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+}
+.detail .box .percent svg circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke: #645e5e;
+}
+.detail .box .percent svg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 85) / 100);
+  stroke: #7ed321;
+}
+.detail .box .percent .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f1f1f1;
+}
+.detail .box .percent .number h2 {
+  font-size: 48px;
+}
+.detail .box .text {
+  padding: 10px 0 0;
+  color: #999;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.detail .box .star {
+  /* margin:auto; */
+  margin-top: 10px;
+}
+.detail .box .star img {
+  max-width: 25px;
+  height: 25px;
+}
 
-//   right: 70%;
-// }
-// .banner .info-text p {
-//   position: absolute;
-// }
-// .banner .info-text1 p {
-//   background-color: orangered;
-//   border-radius: 4px;
-//   padding: 0 5px;
-//   display: inline-block;
-//   text-align: center;
-// }
-// .banner .info-text1 h5 {
-// }
-// .info {
-//   display: flex;
-//   flex-direction: column;
-//   /* position: absolute; */
-// }
-// .btnBuy {
-//   font-size: 1.5rem;
-//   background-color: orangered;
-//   border-radius: 4px;
-//   text-align: center;
-//   margin: 20px 0;
-//   /* width: 8%; */
-//   border: none;
-// }
-// .btnBuy:focus {
-//   outline: none;
-// }
-// .btnBuy:hover {
-//   background-color: #b42a14;
-// }
-// .box {
-//   /* position: absolute; */
-//   /* width: 300px; */
-//   height: 400px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-// }
-// .box .percent {
-//   position: relative;
-//   width: 150px;
-//   height: 150px;
-// }
-// .box .percent svg {
-//   position: relative;
-//   width: 150px;
-//   height: 150px;
-//   background: rgba(29, 26, 26, 0.664);
-//   border-radius: 80px;
-// }
-// .box .percent svg circle {
-//   width: 150px;
-//   height: 150px;
-//   fill: none;
-//   stroke-width: 10;
-//   stroke: rgb(2, 2, 2);
-//   transform: translate(5px, 5px);
-//   stroke-dasharray: 440;
-//   stroke-dashoffset: 440;
-// }
-// .box .percent svg circle:nth-child(1) {
-//   stroke-dashoffset: 0;
-//   stroke: #645e5e;
-// }
-// .box .percent svg circle:nth-child(2) {
-//   stroke-dashoffset: calc(440 - (440 * 85) / 100);
-//   stroke: #7ed321;
-// }
-// .box .percent .number {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   color: #f1f1f1;
-// }
-// .box .percent .number h2 {
-//   font-size: 48px;
-// }
-// .box .text {
-//   padding: 10px 0 0;
-//   color: #999;
-//   font-weight: 700;
-//   letter-spacing: 1px;
-// }
+.detail .navCenter {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.detail .navCenter ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+.detail .navCenter ul li {
+  padding: 0px 20px;
+  transition: font-size 300ms;
+  color: white;
+}
+.detail .navCenter ul li:hover {
+  font-size: 20px;
+  color: #fa5639;
+}
