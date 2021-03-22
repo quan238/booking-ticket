@@ -32,7 +32,7 @@ function Payment() {
           </div>
         </div>
 
-        <div className="container mt-5 ">
+        <div className="container mt-5" style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
           <BookingChair></BookingChair>
         </div>
       </div>
