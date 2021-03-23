@@ -49,9 +49,11 @@
 }
 .detail .banner .container .film-info .info-image img {
 width: 100%;
-//   border-radius: 4%;
+  border-radius: 4%;
+height: 100%;
   right: 70%;
-  object-fit: contain;
+
+  object-fit: cover;
 }
 /* .banner .info-text p {
     position: absolute;
