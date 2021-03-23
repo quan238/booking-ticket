@@ -9,7 +9,7 @@ class RowChair extends Component {
       this.props.row.Chair &&
       this.props.row.Chair.map((chair, index) => {
         let cssStatus = "";
-        let numberDisplay =""
+        let numberDisplay = "";
         // trang thai ghe da bi nguoi khac dat
         let disabled = false;
         if (chair.status) {
@@ -24,21 +24,23 @@ class RowChair extends Component {
         );
         if (indexChairBooked !== -1) {
           cssChairBooked = "chairBooked";
-          numberDisplay ="numberDisplay"
+          numberDisplay = "numberDisplay";
         }
         return (
           <button
-
             onClick={() => {
               //   alert(chair.number);
               this.props.bookGhe(chair);
             }}
             disabled={disabled}
-            style={{ display: "inline-block", padding: "15px" }}
+            style={{ display: "inline-block", padding: "18px" }}
             key={index}
-            className={`chair-book ${cssStatus} ${cssChairBooked}`}
+            className={`chair-book ${cssStatus} ${cssChairBooked} `}
           >
-            <div  className={`chairNum ${numberDisplay}`} style={{display: "none"}} >
+            <div
+              className={`chairNum ${numberDisplay}`}
+              style={{ display: "none" }}
+            >
               {chair.number}
             </div>
           </button>
@@ -48,16 +50,36 @@ class RowChair extends Component {
   };
   renderRowChair = () => {
     return (
-      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-        <div style={{margin: "0", padding: "0", width: "10px"}}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            marginRight: "20px",
+            padding: "0",
+            width: "10px",
+            fontSize: "23px",
+            fontWeight: "bold",
+          }}
+        >
           {this.props.row.row}
         </div>
-           {this.renderChair()}
+
+        {this.renderChair()}
       </div>
     );
   };
   render() {
-    return <div className="" style={{display: "flex", alignItems: "flex-start"}}>{this.renderRowChair()}</div>;
+    return (
+      <div className="" style={{ display: "flex", alignItems: "flex-start" }}>
+        {this.renderRowChair()}
+      </div>
+    );
   }
 }
 

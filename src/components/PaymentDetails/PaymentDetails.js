@@ -166,7 +166,7 @@ class PaymentDetails extends Component {
                 <button
                   type="submit  "
                   className="btn-order "
-                  style={{ background: "#f44336" }}
+                  style={{ background: "#f44336", borderRadius: "2px" }}
                   onClick={(event) => {}}
                 >
                   Đặt Vé

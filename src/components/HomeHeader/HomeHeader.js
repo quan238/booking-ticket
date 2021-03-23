@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import "./HomeHeader.scss";
-import {Link} from"react-router-dom"
-export default class HomeHeader extends Component {
+
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+class HomeHeader extends Component {
   render() {
+    console.log(this.props.inform);
     return (
       <div>
         {/* Header Section */}
@@ -35,10 +38,19 @@ export default class HomeHeader extends Component {
           </ul>
           {/* Account Button */}
           <div className="login_location">
-            <div className="main-btn">
-              <i className="fas fa-user-circle" />
-              <Link to="/login">Đăng Nhập</Link>
-            </div>
+            {this.props.inform ? (
+              <div className="main-btn">
+                <i class="fa fa-user-check"></i>
+                <h4 style={{margin:"0 10px"}}>{this.props.inform.taiKhoan}</h4>
+              </div>
+            ) : (
+              <div className="main-btn">
+                <i className="fas fa-user-circle" />
+
+                <Link to="/login">Đăng Nhập</Link>
+              </div>
+            )}
+
             <div className="dropdown">
               <button
                 className="btn dropdown-toggle"
@@ -100,3 +112,10 @@ export default class HomeHeader extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    inform: state.ConfirmUser.credentials,
+  };
+};
+export default connect(mapStateToProps)(HomeHeader);
