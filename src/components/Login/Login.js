@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getUser } from "../../actions/authenticationActions/getUser";
 import { Form, Formik, Field } from "formik";
 import { signInUser } from "../../actions/authenticationActions/ConfirmUser";
+import { Link } from "react-router-dom";
 class Login extends Component {
   componentDidMount() {
     this.props.dispatch(getUser());
@@ -112,9 +113,14 @@ class Login extends Component {
                     onChange={handleChange}
                   />
                 </div>
+
                 <button>Sign In</button>
+
                 <p style={{ paddingTop: "30px", marginBottom: "0" }}>
-                  Don't have the account? <a href="./signUp.html">Sign Up</a>
+                  Don't have the account?{" "}
+                  <Link exact to="/signup">
+                    Sign Up{" "}
+                  </Link>
                 </p>
               </Form>
             </div>
@@ -128,6 +134,7 @@ class Login extends Component {
 const mapStateToProps = (state) => {
   return {
     user: state.getUser.user,
+    
     // confirmUser: state.ConfirmUser.credentials,
   };
 };

@@ -5,7 +5,7 @@
 }
 .detail .banner {
   /* top: 0;
-    left: 0; */
+  left: 0; */
   width: 100%;
   height: 70vh;
   position: relative;
@@ -16,48 +16,51 @@
   align-items: center;
   justify-content: center;
 }
+/* Blur img */
+.detail .banner .img-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(15px);
+}
+.detail .banner .img-blur img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* End */
 .detail .banner .container {
   width: 75% !important;
-  position: relative;
+  position: absolute;
   /* margin-top: 50px; */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.detail .banner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 82%;
-  height: 80%;
-  // background: url(./imgb/1.png) no-repeat center top;
-  background-size: cover;
-  overflow: hidden;
-}
+/*  */
 .detail .banner .container .film-info {
   /* position: absolute; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  
 }
-.detail .banner .container .film-info .info-image{
-    border-radius: 4%;
-    width: 230px;
-    height: 350px;
+.detail .banner .container .film-info .info-image {
+  width: 250px;
+  height: 350px;
 }
 .detail .banner .container .film-info .info-image img {
-width: 100%;
+  width: 100%;
+  height: 100%;
   border-radius: 4%;
-height: 100%;
-  right: 70%;
-
   object-fit: cover;
+  right: 70%;
 }
 /* .banner .info-text p {
-    position: absolute;
-  } */
+  position: absolute;
+} */
 .detail .banner .container .film-info .info .info-text1 p {
   background-color: orangered;
   border-radius: 4px;

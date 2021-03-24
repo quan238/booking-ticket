@@ -17,11 +17,11 @@ class RowChair extends Component {
           disabled = true;
         }
         // xet trang thai ghe dang dat
-        let cssChairBooked = "";
-        let indexChairBooked = this.props.rowPurchased.findIndex(
-          (gheDangDat) => gheDangDat.number === chair.number
-          // && this.props.row.row === gheDangDat.row
-        );
+          let cssChairBooked = "";
+          let indexChairBooked = this.props.rowPurchased.findIndex(
+            (gheDangDat) => gheDangDat.number === chair.number
+            // && this.props.row.row === gheDangDat.row
+          );
         if (indexChairBooked !== -1) {
           cssChairBooked = "chairBooked";
           numberDisplay = "numberDisplay";

@@ -22,49 +22,50 @@ class Film extends Component {
   renderItem = () => {
     return (
       this.props.movie &&
-      this.props.movie.map((item, index) => {
-        console.log(item);
-        return (
-          <div className="film_column" key={index}>
-            <div>
-              <div className="film-img">
-                <Link to={`/details/movie/${item.maPhim}`}>
-                  <img src={item.hinhAnh} alt />
-                </Link>
-              </div>
-              <div className="film_info">
-                {(item.maPhim % 3 === 0) ? (
-                  <span
-                    ng-class="{'ageType': true, 'ageType-general': film.film_age==0}"
-                    class="ng-binding ageType"
-                  >
-                    C13
-                  </span>
-                ) : (
-                  <span
-                    ng-class="{'ageType': true, 'ageType-general': film.film_age==0}"
-                    class="ng-binding ageType2"
-                  >
-                    P
-                  </span>
-                )}
-
-                <p className="film_title"> {item.tenPhim}</p>
-                {/* <p className="film_time">{item.ngayKhoiChieu}</p> */}
+      this.props.movie
+        .slice(this.props.movie.length / 2, this.props.movie.length)
+        .map((item, index) => {
+          // console.log(item);
+          return (
+            <div className="film_column" key={index}>
+              <div>
+                <div className="film-img">
+                  <Link to={`/details/movie/${item.maPhim}`}>
+                    <img src={item.hinhAnh} alt />
+                  </Link>
+                </div>
+                <div className="film_info">
+                  {item.maPhim % 3 === 0 ? (
+                    <span
+                      ng-class="{'ageType': true, 'ageType-general': film.film_age==0}"
+                      class="ng-binding ageType"
+                    >
+                      C13
+                    </span>
+                  ) : (
+                    <span
+                      ng-class="{'ageType': true, 'ageType-general': film.film_age==0}"
+                      class="ng-binding ageType2"
+                    >
+                      P
+                    </span>
+                  )}
+                  <p className="film_title"> {item.tenPhim}</p>
+                  {/* <p className="film_time">{item.ngayKhoiChieu}</p> */}
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })
+          );
+        })
     );
   };
   render() {
     // console.log(this.props.movie);
     var settings = {
-      // className: "center",
-      // centerMode: true,
+      //   className: "center",
+      //   centerMode: true,
       infinite: true,
-      // centerPadding: "50px",
+      //   centerPadding: "50px",
       slidesToShow: 4,
       speed: 500,
       rows: 2,

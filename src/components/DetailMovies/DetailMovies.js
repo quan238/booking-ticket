@@ -18,14 +18,15 @@ class DetailMovies extends Component {
     // if (detail_movie.heThongRapChieu) {
     console.log(detail_movie);
     // }
+    let a = this.props.detail_movie.danhGia;
     return (
       <div>
         <HomeHeader></HomeHeader>
         <div className="detail">
-          <div
-            className="banner"
-            style={{ background: `${detail_movie.hinhAnh}` }}
-          >
+          <div className="banner">
+            <div className="img-blur">
+              <img src={detail_movie.hinhAnh} alt />
+            </div>
             <div className="container">
               {/* <div class="detail-top col-4"></div> */}
               <div className="film-info">
@@ -33,7 +34,7 @@ class DetailMovies extends Component {
                   <img src={detail_movie.hinhAnh} alt />
                 </div>
                 <div className="info text-light ml-3">
-                  <p className="mb-1">12.03.2021</p>
+                  <p className="mb-1">{detail_movie.ngayKhoiChieu}</p>
                   <div
                     className="info-text1"
                     style={{
@@ -61,26 +62,33 @@ class DetailMovies extends Component {
                 <div className="percent">
                   <svg>
                     <circle cx={70} cy={70} r={70} />
-                    <circle cx={70} cy={70} r={70} />
+                    <circle
+                      cx={70}
+                      cy={70}
+                      r={70}
+                      style={{
+                        strokeDashoffset: `calc(440 - (440 * ${a} * 10) / 100)`,
+                      }}
+                    />
                   </svg>
                   <div className="number">
                     <h2>{detail_movie.danhGia}</h2>
                   </div>
                 </div>
                 <div className="star">
-                  <img src="./img/star.png" alt />
-                  <img src="./img/star.png" alt />
-                  <img src="./img/star.png" alt />
-                  <img src="./img/star.png" alt />
-                  <img src="./img/rate.png" alt />
+                  <img src="./img/star.png" alt="" />
+                  <img src="./img/star.png" alt="" />
+                  <img src="./img/star.png" alt="" />
+                  <img src="./img/star.png" alt="" />
+                  <img src="./img/rate.png" alt="" />
                   <p className="text-light" style={{ fontWeight: "bold" }}>
-                    {/* 268 người đánh giá */}
+                    268 người đánh giá
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="navCenter">
+          <div className="navCenter mt-5">
             <ul>
               <li>Lịch Chiếu</li>
               <li>Thông tin</li>

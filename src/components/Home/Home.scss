@@ -26,3 +26,31 @@ a {
 // 165deg
 // , #251431 0%, #161130 22%);
 // }
+
+.Active {
+  color: #fa5639;
+  font-size: 30px;
+}
+.noActive {
+  color: #111;
+  font-size: 24px;
+}
+.ActiveFilm {
+  display: block;
+  margin-top: 50px;
+  animation: fadeIn ease 1s;
+}
+.noActiveFilm {
+  display: none;
+  margin-top: 50px;
+  transition: 2s opacity ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

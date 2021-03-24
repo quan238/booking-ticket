@@ -9,7 +9,7 @@
 .film_manage ul {
   /* padding: 20px; */
   height: 40px;
-  font-size: 20px;
+  font-size: 24px;
 }
 .film_manage ul li {
   display: inline;
@@ -18,7 +18,7 @@
 .film_manage ul li span {
   transition: font-size 300ms;
 }
-.film_manage ul li:hover {
+.film_manageActive {
   color: #fa5639;
   font-size: 24px;
   /* padding: 0px 20px; */
@@ -32,7 +32,6 @@
 .film-img {
   height: 450px;
   width: 95%;
-
 }
 .film-img img {
   width: 100%;
@@ -42,13 +41,26 @@
   object-fit: cover;
 }
 .film_info {
-  margin: 5px 0px;
+  margin: 8px 0px 20px 3px;
+  display: flex;
+  align-items: center;
+
+  // justify-content: center;
 }
 .film_info p {
   margin-bottom: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 80%;
 }
 .film_info p.film_title {
   font-weight: 600;
+
+  padding-left: 0px;
+  padding-bottom: 0px;
+  // margin-top: 5px;
+  // margin-bottom: 10px;
 }
 .film_info p.film_time {
   padding-top: 10px;
@@ -70,15 +82,38 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-
 }
-.slick-next::before,.slick-prev::before{
-  color:#111;
+.slick-next::before,
+.slick-prev::before {
+  color: #111;
   font-size: 50px;
 }
 .slick-next {
   right: -50px;
 }
-.slick-prev{
-  left:-70px
+.slick-prev {
+  left: -70px;
+}
+
+.ageType {
+  font-size: 14px;
+  background-color: #fb4226;
+  border-radius: 4px;
+  padding: 0 5px;
+  color: #fff;
+  min-width: 33px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 8px;
+}
+.ageType2 {
+  font-size: 14px;
+  background-color: #00ac4d;
+  border-radius: 4px;
+  padding: 0 5px;
+  color: #fff;
+  min-width: 33px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 8px;
 }

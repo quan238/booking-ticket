@@ -184,6 +184,7 @@ const mapStateToProps = (state) => {
   return {
     detail_movie: state.getDetailMovie.result,
     rowPurchased: state.getTicket.rowPurchased,
+ 
   };
 };
 export default connect(mapStateToProps)(PaymentDetails);

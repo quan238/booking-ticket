@@ -5,12 +5,12 @@
       {
         "number": "A1",
         "price": 85000,
-        "status": true
+        "status": false
       },
       {
         "number": "A2",
         "price": 85000,
-        "status": true
+        "status": false
       },
       {
         "number": "A3",
@@ -20,7 +20,7 @@
       {
         "number": "A4",
         "price": 85000,
-        "status": true
+        "status": false
       },
       {
         "number": "A5",
@@ -325,32 +325,32 @@
         {
           "number": "E5",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "E6",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "E7",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "E8",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "E9",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "E10",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "E11",
@@ -400,17 +400,17 @@
         {
           "number": "F5",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "F6",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "F7",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "F8",
@@ -420,12 +420,12 @@
         {
           "number": "F9",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "F10",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "F11",
@@ -475,12 +475,12 @@
         {
           "number": "G5",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "G6",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "G7",
@@ -500,7 +500,7 @@
         {
           "number": "G10",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "G11",
@@ -575,7 +575,7 @@
         {
           "number": "H10",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "H11",
@@ -625,12 +625,12 @@
         {
           "number": "I5",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "I6",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "I7",
@@ -645,7 +645,7 @@
         {
           "number": "I9",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "I10",

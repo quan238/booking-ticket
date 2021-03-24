@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0px 20px;
-  background-color: white!important;
+  background-color: white !important;
   // position: fixed;
   z-index: 99;
   transition: 0.3s ease background-color;
@@ -57,10 +57,12 @@
   font-size: 16px;
   cursor: pointer;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  position: relative;
 }
 .main-btn a {
   text-decoration: none;
   color: #9b9b9b;
+  position: relative;
 }
 .main-btn i {
   padding-right: 5px;
@@ -70,5 +72,16 @@
 .menu-icon,
 .menu-btn {
   display: none;
+}
+.logoutbtn {
+  display: none;
+}
+.main-btn:hover .logoutbtn {
+  display: block;
+  // color:#fff
+  position: absolute;
+  top: 45px;
+  left: 0px;
+  z-index: 10000000000;
 }
 /* Edn Header Section */

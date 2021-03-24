@@ -41,13 +41,17 @@ class HomeHeader extends Component {
             {this.props.inform ? (
               <div className="main-btn">
                 <i class="fa fa-user-check"></i>
-                <h4 style={{margin:"0 10px"}}>{this.props.inform.taiKhoan}</h4>
+                <h4 style={{ margin: "0 10px" }}>
+                  {this.props.inform.taiKhoan}
+                </h4>
+                <button className="btn btn-dark logoutbtn">Đăng Xuất</button>
               </div>
             ) : (
               <div className="main-btn">
                 <i className="fas fa-user-circle" />
 
                 <Link to="/login">Đăng Nhập</Link>
+              
               </div>
             )}
 
