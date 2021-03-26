@@ -6,7 +6,23 @@ import Loader from "../Loader/Loader";
 import "./DetailMovies.scss";
 import { getDetailsAPI } from "../../actions/movieActions/GetDetails";
 import { navLink, Link } from "react-router-dom";
+import Calendar from "../Calendar/Calendar";
+import InfoDetail from "./InfoDetail";
 class DetailMovies extends Component {
+  constructor() {
+    super();
+    console.log("constructor");
+    this.state = {
+      status: true,
+    };
+  }
+  changeActive() {
+    this.setState({ status: !this.state.status });
+  }
+  changeColor() {
+    this.setState({ status: !this.state.status });
+  }
+
   componentDidMount() {
     let { id } = this.props.match.params;
     console.log(id);
@@ -18,6 +34,14 @@ class DetailMovies extends Component {
     // if (detail_movie.heThongRapChieu) {
     console.log(detail_movie);
     // }
+    let title = this.state.status ? "Active" : "noActive";
+    let title2 = this.state.status ? "noActive" : "Active";
+    // let title3 = this.state.status ? "noActive" : "Active";
+
+    let status = this.state.status ? "ActiveStatus" : "noActiveStatus";
+    let status2 = this.state.status ? "noActiveStatus" : "ActiveStatus";
+    // let status3 = this.state.status ? "noActiveStatus" : "ActiveStatus";
+
     let a = this.props.detail_movie.danhGia;
     return (
       <div>
@@ -34,7 +58,7 @@ class DetailMovies extends Component {
                   <img src={detail_movie.hinhAnh} alt />
                 </div>
                 <div className="info text-light ml-3">
-                  <p className="mb-1">{detail_movie.ngayKhoiChieu}</p>
+                  {/* <p className="mb-1">{detail_movie.ngayKhoiChieu}</p> */}
                   <div
                     className="info-text1"
                     style={{
@@ -44,7 +68,14 @@ class DetailMovies extends Component {
                     }}
                   >
                     <p className="m-0 mr-2">
-                      <strong>C13</strong>
+                      {detail_movie.maPhim % 3 === 0 ? (
+                        <strong>
+                          C13
+                          {/* </span> */}
+                        </strong>
+                      ) : (
+                        <strong> P</strong>
+                      )}
                     </p>
                     <h5 className="m-0">{detail_movie.tenPhim}</h5>
                   </div>
@@ -88,21 +119,35 @@ class DetailMovies extends Component {
               </div>
             </div>
           </div>
-          <div className="navCenter mt-5">
+          <div className="navCenter " style={{ marginTop: "80px" }}>
             <ul>
-              <li>Lịch Chiếu</li>
-              <li>Thông tin</li>
-              <li>Đánh giá</li>
+              <li onClick={this.changeColor.bind(this)} className={title}>
+                Lịch Chiếu
+              </li>
+              <li onClick={this.changeColor.bind(this)} className={title2}>
+                Thông tin
+              </li>
+              {/* <Calendar></Calendar> */}
             </ul>
           </div>
           <a id="button" />
+          {/* <Calendar></Calendar> */}
+        </div>
+        {/* <div className="container"> */}
+        <div onClick={this.changeActive.bind(this)} className={status}>
+          <Calendar></Calendar>
+        </div>
+        <div onClick={this.changeActive.bind(this)} className={status2}>
+          <InfoDetail></InfoDetail>
         </div>
 
+        {/* </div> */}
         <Footer></Footer>
       </div>
     );
   }
 }
+
 const mapStateToProps = (state) => {
   return {
     detail_movie: state.getDetailMovie.result,

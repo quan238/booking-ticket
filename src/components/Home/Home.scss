@@ -28,7 +28,7 @@ a {
 // }
 
 .Active {
-  color: #fa5639;
+  color: #fa5639 !important;
   font-size: 30px;
 }
 .noActive {
@@ -39,11 +39,12 @@ a {
   display: block;
   margin-top: 50px;
   animation: fadeIn ease 1s;
+  // tra  nsition: 2s opacity ease;
 }
 .noActiveFilm {
   display: none;
   margin-top: 50px;
-  transition: 2s opacity ease;
+  // transition: 2s opacity ease;
 }
 
 @keyframes fadeIn {

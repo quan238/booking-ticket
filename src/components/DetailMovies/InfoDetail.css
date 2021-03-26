@@ -1,0 +1,45 @@
+.detailInfo {
+  background-color: rgb(10, 32, 41);
+  width: 100%;
+  color: white;
+  height: 60vh;
+  /* margin-bottom: 50px; */
+}
+.detailMainStyle {
+  /* margin-top: 40px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* font-size: 100px */
+}
+.detailInfo .film {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: space-around; */
+}
+
+.dark .contentTitle {
+  color: #fff;
+}
+.detailInfo .row {
+  text-align: left;
+  margin-left: 50px;
+}
+.contentTitle {
+  width: 35%;
+  float: left;
+  font-size: 20px;
+  font-weight: 600;
+  /* font-family: "SF Medium"; */
+}
+.contentInfo {
+}
+.contentInfo {
+  width: 40%;
+  float: left;
+  font-size: 20px;
+  /* color: #4a4a4a; */
+  color: #e9e9e9;
+
+}

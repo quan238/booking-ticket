@@ -7,7 +7,7 @@ import HomeHeader from "../HomeHeader/HomeHeader";
 import Loader from "../Loader/Loader";
 import "./Home.scss";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Cinema from "../Cinema/Cinema";
 import Film2 from "../Film_Manage/Film2";
 
@@ -42,9 +42,9 @@ export default class Home extends Component {
           <HomeHeader></HomeHeader>
           <Carousel></Carousel>
           <Book_Ticket></Book_Ticket>
-          <div className="container mt-5 mb-5 ">
+          <div className="container  mb-5 " style={{ marginTop: "100px" }}>
             <div className="film_manage">
-              <ul class="select_time">
+              <ul className="select_time">
                 <li onClick={this.changeColor.bind(this)} className={title}>
                   <a
                     data-toggle="tab"

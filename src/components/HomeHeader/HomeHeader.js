@@ -4,9 +4,19 @@ import "./HomeHeader.scss";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 class HomeHeader extends Component {
+
+  deleteStorgeUser = () => {
+    // console.log("a")
+    // var storedData = localStorage.getItem("credentials");
+    localStorage.removeItem("credentials");
+ window.location.reload();
+
+  }
   render() {
-    console.log(this.props.inform);
+    // console.log(this.props.inform);
+
     return (
+
       <div>
         {/* Header Section */}
         <nav className="navigation">
@@ -39,19 +49,19 @@ class HomeHeader extends Component {
           {/* Account Button */}
           <div className="login_location">
             {this.props.inform ? (
-              <div className="main-btn">
-                <i class="fa fa-user-check"></i>
-                <h4 style={{ margin: "0 10px" }}>
+              <div className="main-btn" style={{ color: "#9b9b9b" }}>
+                <i className="fas fa-user-circle" style={{ color: "#dbdee3", fontSize: "36px" }} />
+                <h4 style={{ margin: "0 10px", fontSize: "18px", margin: "0px 8px" }}>
                   {this.props.inform.taiKhoan}
                 </h4>
-                <button className="btn btn-dark logoutbtn">Đăng Xuất</button>
+                <button className="btn btn-dark logoutbtn" onClick={this.deleteStorgeUser}>Đăng Xuất</button>
               </div>
             ) : (
               <div className="main-btn">
                 <i className="fas fa-user-circle" />
 
                 <Link to="/login">Đăng Nhập</Link>
-              
+
               </div>
             )}
 

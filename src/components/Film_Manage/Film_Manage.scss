@@ -32,6 +32,8 @@
 .film-img {
   height: 450px;
   width: 95%;
+  border-radius: 4%;
+  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .film-img img {
   width: 100%;
@@ -42,6 +44,7 @@
 }
 .film_info {
   margin: 8px 0px 20px 3px;
+  
   display: flex;
   align-items: center;
 
