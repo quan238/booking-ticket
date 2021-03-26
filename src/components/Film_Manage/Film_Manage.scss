@@ -42,6 +42,11 @@
   // object-fit: contain;
   object-fit: cover;
 }
+.film-img:hover img {
+  opacity: 0.65;
+  // box-shadow:         inset 0 0 100px #000000;
+  transition: 0.6s ease;
+}
 .film_info {
   margin: 8px 0px 20px 3px;
   

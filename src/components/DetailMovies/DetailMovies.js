@@ -10,6 +10,8 @@ import Calendar from "../Calendar/Calendar";
 import InfoDetail from "./InfoDetail";
 import SmoothScrolling from "../App/assets/js/smoothScrolling";
 // import SmoothScrolling from "../../../node_modules/";
+import star from "./img/star.png";
+import rate from "./img/rate.png";
 
 class DetailMovies extends Component {
   constructor() {
@@ -21,6 +23,7 @@ class DetailMovies extends Component {
     this.scrollUp = this.scrollUp.bind(this);
   }
   scrollUp() {
+    // this.changeActive.bind(this)
     SmoothScrolling.scrollTo("lichChieu");
   }
   changeActive() {
@@ -84,7 +87,7 @@ class DetailMovies extends Component {
                         <strong> P</strong>
                       )}
                     </p>
-                    <h5 className="m-0">{detail_movie.tenPhim}</h5>
+                    <h3 className="m-0">{detail_movie.tenPhim}</h3>
                   </div>
                   <p className="m-0 mb-1">128 phút - 0 IMDb -</p>
                   <a
@@ -115,15 +118,12 @@ class DetailMovies extends Component {
                     <h2>{detail_movie.danhGia}</h2>
                   </div>
                 </div>
-                <div className="star">
-                  <img src="./img/star.png" alt="" />
-                  <img src="./img/star.png" alt="" />
-                  <img src="./img/star.png" alt="" />
-                  <img src="./img/star.png" alt="" />
-                  <img src="./img/rate.png" alt="" />
-                  <p className="text-light" style={{ fontWeight: "bold" }}>
-                    268 người đánh giá
-                  </p>
+                <div className="star mt-4">
+                  <img src={star} style={{ margin: "0 5px" }} alt="" />
+                  <img src={star} style={{ margin: "0 5px" }} alt="" />
+                  <img src={star} style={{ margin: "0 5px" }} alt="" />
+                  <img src={star} style={{ margin: "0 5px" }} alt="" />
+                  <img src={rate} style={{ margin: "0 5px" }} alt="" />
                 </div>
               </div>
             </div>

@@ -4,6 +4,7 @@ import { routesHome } from "../../routes";
 import { connect } from "react-redux";
 import { createAction } from "../../actions";
 import { FETCH_CREDENTIALS } from "../../actions/types";
+import ScrollToTop from "./ScrollToTop";
 class App extends Component {
   _getCredentialFromLocal = () => {
     const credentialsStr = localStorage.getItem("credentials");
@@ -34,7 +35,9 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <Switch>{showItem(routesHome)}</Switch>
+          <ScrollToTop>
+            <Switch>{showItem(routesHome)}</Switch>
+          </ScrollToTop>
         </BrowserRouter>
       </div>
     );

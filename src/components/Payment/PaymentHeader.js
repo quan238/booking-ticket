@@ -17,7 +17,7 @@ class PaymentHeader extends Component {
           <nav className="stepChecking">
             <ul className="steps">
               <li>
-                <a href="#" className="pr-5">
+                <a href="#" className="pr-5"  style={{  color: "#fa5639"}}>
                   01 CHỌN GHẾ VÀ THANH TOÁN
                 </a>
               </li>

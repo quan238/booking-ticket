@@ -12,7 +12,7 @@ class Calendar extends Component {
   //     this.props.dispatch(getDetailsAPI(id));
   //   }
   render() {
-    console.log(this.props.detail_movie);
+    // console.log(this.props.detail_movie);
     return (
       //   <div className="calendar ">
 
@@ -258,7 +258,7 @@ class Calendar extends Component {
                               </div>
                             </div>
                             <div className="typeOfFilm">2D Digital</div>
-                            <div className="timeSection">
+                            <div className="timeSection mt-3">
                               {/* <div className="timeInDay">
                                 <span className="time-start">09:30</span>
                                 <p>~ 11:38</p>
@@ -295,7 +295,6 @@ class Calendar extends Component {
                                           {moment(
                                             lichChieu.ngayChieuGioChieu
                                           ).format("LT")}
-                                      
                                         </span>
                                         {/* <p>~ 11:38</p> */}
                                       </div>

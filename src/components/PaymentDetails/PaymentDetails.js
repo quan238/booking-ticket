@@ -30,7 +30,7 @@ class PaymentDetails extends Component {
         [name]: value,
       },
       () => {
-        console.log(this.state);
+        // console.log(this.state);
       }
     );
   };
@@ -69,7 +69,7 @@ class PaymentDetails extends Component {
     // console.log(this.props.detail_movie);
     let heThongRap = "BHD-STAR";
 
-    console.log(this.state);
+    // console.log(this.state);
     // if (detail_movie.thongTinPhim) {
     //   console.log(this.props.detail_movie);
     //   // thongTinPhim = detail_movie.heThongRapChieu[0].maHeThongRap;
@@ -82,6 +82,7 @@ class PaymentDetails extends Component {
     //     console.log(cumRapChieu);
     //   }
     // }
+    // console.log(this.props.inform);
     let tongTien = 0;
     if (this.props.rowPurchased) {
       tongTien = this.props.rowPurchased.reduce(
@@ -96,7 +97,7 @@ class PaymentDetails extends Component {
     let contentChair = "";
     if (this.props.rowPurchased) {
       this.props.rowPurchased.map((chairbooked, index) => {
-        return (contentChair += ` \GHẾ: ${chairbooked.number} `);
+        return (contentChair += ` GHẾ: ${chairbooked.number} \n \ `);
       });
     }
     let nameMovie = "";
@@ -196,7 +197,9 @@ class PaymentDetails extends Component {
                 ref="submitForm"
                 onSubmit={(e) => {
                   e.preventDefault();
-                  if (e.target.checkValidity()) {
+                  // inform: state.ConfirmUser.credentials,
+
+                  if (e.target.checkValidity() && this.props.inform) {
                     swal({
                       title: "Are you sure?",
                       text:
@@ -259,6 +262,8 @@ class PaymentDetails extends Component {
                     // <Link to="/" />;
 
                     e.target.value = "";
+                  } else {
+                    swal("Login Firstly!", "You clicked the button!", "error");
                   }
                 }}
               >
@@ -287,6 +292,7 @@ class PaymentDetails extends Component {
                   <div className="paymentMethod">
                     <input
                       // required
+                      checked
                       type="radio"
                       name="payment"
                       defaultValue="Visa"

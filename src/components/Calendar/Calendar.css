@@ -13,6 +13,13 @@
   box-shadow: 0 0 10px rgb(0 0 0 / 30%);
   padding: 0;
 }
+.calendar .flex-column {
+  /* border-top: 1px solid #ebebec; */
+  /* border-bottom: 1px solid #ebebec; */
+  border-right: 1px solid #ebebec;
+  /* border-top-left-radius: 4px; */
+  /* border-bottom-left-radius: 4px; */
+}
 .nav-link {
   /* background-color: rgba(246, 246, 246, 0.5); */
   /* background-color: #fff!important; */
@@ -86,7 +93,7 @@
   font-size: 13px;
 }
 .calendar .chooseTime .cinema-info .info span:nth-child(1) {
-  font-size: 16px;
+  font-size: 20px;
   color: #fa5639;
   font-weight: 600;
 }
@@ -119,8 +126,9 @@
   background-color: rgba(246, 246, 246, 0.5);
   border-radius: 7px;
   color: #9b9b9b;
-  border: 1px solid #e4e4e4;
+  border: 1.5px solid #e4e4e4;
   letter-spacing: -0.12px;
+
 }
 .calendar .chooseTime .timeSection .timeInDay .time-start {
   font-size: 18px;
@@ -128,8 +136,9 @@
   color: #108f3e;
   letter-spacing: -0.16px;
   padding-right: 5px;
+  transition: 0.15s ease;
 }
-.calendar .chooseTime .timeSection .timeInDay .time-start:hover {
+.calendar .chooseTime .timeSection .timeInDay:hover .time-start {
   color: #fa5639;
 }
 .calendar .chooseTime .timeSection .timeInDay p {

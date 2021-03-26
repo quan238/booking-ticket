@@ -27,11 +27,14 @@ export default class Carousel extends Component {
               />
             </div>
             <div className="carousel-item">
-              <img src="https://touchcinema.com/storage/phim-2021/ddy7ptk-e2cbec0e-45df-4709-8f06-e5d3eca07b1c.png?fbclid=IwAR1rQssh8XG5oVdd0Xh_YRo0-utIubk9RQRRxlF0t2Bw3NL_oC6y4Et03hg" alt="Second slide" />
+              <img
+                src="https://s3img.vcdn.vn/123phim/2021/03/oi-troi-oi-16167488704232.jpg"
+                alt="Second slide"
+              />
             </div>
             <div className="carousel-item">
               <img
-                src="https://s3.cloud.cmctelecom.vn/tinhte1/2011/06/2929868_optimus_prime_tf3_high_resolution-HD.jpg?fbclid=IwAR3EY_1N1uWnVBUO-G3-vuGb20Kj2PNIiiqj-JPlbQ3ZIVrpCqpR42XWQUg"
+                src="https://s3img.vcdn.vn/123phim/2021/03/harry-potter-16167486102625.jpg"
                 alt="Third slide"
                 className="d-block w-100"
               />

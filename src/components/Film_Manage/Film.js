@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 // import Slider from "react-slick";
 import "../../../node_modules/react-multi-carousel/lib/styles.css";
 // import Async from "react-async";
-import { navLink, Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Slider from "react-slick";
 
 class Film extends Component {
@@ -25,70 +25,70 @@ class Film extends Component {
       this.props.movie.map((item, index) => {
         // console.log(item);
         return (
-          <div className="film_column" key={index} >
-            <div >
-            <div className="film-img">
-              <Link to={`/details/movie/${item.maPhim}`}>
-                <img src={item.hinhAnh} alt />
-              </Link>
-            </div>
-            <div className="film_info">
-              {(item.maPhim % 3 === 0) ? (
-                <span
-                  ng-class="{'ageType': true, 'ageType-general': film.film_age==0}"
-                  class="ng-binding ageType"
-                >
-                  C13
-                </span>
-              ) : (
-                <span
-                  ng-class="{'ageType': true, 'ageType-general': film.film_age==0}"
-                  class="ng-binding ageType2"
-                >
-                  P
-                </span>
-              )}
+          <div className="film_column" key={index}>
+            <div>
+              <div className="film-img">
+                <NavLink exact to={`/details/movie/${item.maPhim}`}>
+                  <img src={item.hinhAnh} alt />
+                </NavLink>
+              </div>
+              <div className="film_info">
+                {item.maPhim % 3 === 0 ? (
+                  <span
+                    ng-class="{'ageType': true, 'ageType-general': film.film_age==0}"
+                    class="ng-binding ageType"
+                  >
+                    C13
+                  </span>
+                ) : (
+                  <span
+                    ng-class="{'ageType': true, 'ageType-general': film.film_age==0}"
+                    class="ng-binding ageType2"
+                  >
+                    P
+                  </span>
+                )}
 
-              <p className="film_title"> {item.tenPhim}</p>
-              {/* <p className="film_time">{item.ngayKhoiChieu}</p> */}
+                <p className="film_title"> {item.tenPhim}</p>
+                {/* <p className="film_time">{item.ngayKhoiChieu}</p> */}
+              </div>
             </div>
           </div>
-          </div >
         );
-  })
+      })
     );
-};
-render() {
-  // console.log(this.props.movie);
-  var settings = {
-    // className: "center",
-    // centerMode: true,
-    infinite: true,
-    // centerPadding: "50px",
-    slidesToShow: 4,
-    speed: 500,
-    rows: 2,
-    slidesPerRow: 1,
   };
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 3, // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-  };
-  return <Slider {...settings}>{this.renderItem()}</Slider>;
-}
+  render() {
+    // console.log(this.props.movie);
+    var settings = {
+      // className: "center",
+      // centerMode: true,
+      infinite: true,
+      // centerPadding: "50px",
+      slidesToShow: 4,
+      speed: 500,
+      rows: 2,
+      slidesPerRow: 1,
+    };
+    const responsive = {
+      desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3,
+        slidesToSlide: 3, // optional, default to 1.
+      },
+      tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2,
+        slidesToSlide: 2, // optional, default to 1.
+      },
+      mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,
+        slidesToSlide: 1, // optional, default to 1.
+      },
+    };
+    return <Slider {...settings}>{this.renderItem()}</Slider>;
+  }
 }
 const mapStateToProps = (state) => {
   return {

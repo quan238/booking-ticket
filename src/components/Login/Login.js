@@ -23,7 +23,7 @@ class Login extends Component {
   //   // this.handleChangeValue(name, value);
   // };
   render() {
-    console.log(this.props.user);
+    // console.log(this.props.user);
     // let user;
     // let { email, password } = user;
     // this.getValueFromInput();
@@ -99,7 +99,7 @@ class Login extends Component {
                     id="email"
                     type="text"
                     name="taiKhoan"
-                    placeholder="example@gmail.com"
+                    placeholder="abcde"
                     className="Email"
                     onChange={handleChange}
                   />

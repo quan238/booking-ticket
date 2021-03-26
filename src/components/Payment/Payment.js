@@ -6,7 +6,7 @@ import PaymentHeader from "./PaymentHeader";
 
 class Payment extends Component {
   render() {
-    console.log(this.props.detail_movie);
+    // console.log(this.props.detail_movie);
 
     return (
       <div>

@@ -11,7 +11,7 @@ export default function SignUp() {
           matKhau: "",
         }}
         onSubmit={(values) => {
-          console.log(values);
+          // console.log(values);
           //   this.props.dispatch(signInUser(values));
         }}
         render={({ handleChange }) => (
@@ -25,7 +25,7 @@ export default function SignUp() {
                 <div className="form-control_login">
                   <Field
                     id="email"
-                    type="text"
+                    type="email"
                     name="taiKhoan"
                     placeholder="example@gmail.com"
                     className="Email"
@@ -36,7 +36,7 @@ export default function SignUp() {
                   <Field
                     id="email"
                     type="text"
-                    name="taiKhoan"
+                    name="hoTen"
                     placeholder="example@gmail.com"
                     className="Email"
                     onChange={handleChange}
@@ -55,10 +55,10 @@ export default function SignUp() {
                 <div className="form-control_login">
                   <Field
                     // id="password"
-                    name="matKhau"
+                    name="confirmmatKhau"
                     type="password"
                     placeholder={123456}
-                    className="Password"
+                    className="confirmPassword"
                     onChange={handleChange}
                   />
                 </div>

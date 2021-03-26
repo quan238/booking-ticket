@@ -3,29 +3,30 @@ import "./HomeHeader.scss";
 
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
+import youtube from "../App/assets/img/youtube-logo-2020.svg";
+import ReactLogo from '../../logo.svg';
+import facebook from "../App/assets/img/facebook-logo@logotyp.us.svg"
 class HomeHeader extends Component {
-
   deleteStorgeUser = () => {
     // console.log("a")
     // var storedData = localStorage.getItem("credentials");
     localStorage.removeItem("credentials");
- window.location.reload();
-
-  }
+    window.location.reload();
+  };
   render() {
     // console.log(this.props.inform);
 
     return (
-
       <div>
         {/* Header Section */}
         <nav className="navigation">
           <div className="logo" style={{ width: "257.61px" }}>
-            <a href="index.html"></a>
+            <NavLink to="/" extact>
+              <img src={youtube} alt=""  />
+            </NavLink>
           </div>
-          <a href="index.html">
-            {/* <img src="/images/bieu-tuong-adidas.jpg" alt="" width="60px" /> */}
-          </a>
+          <a href="index.html"></a>
           {/* Checkbox */}
           <input type="checkbox" className="menu-btn" id="menu-btn" />
           <label htmlFor="menu-btn" className="menu-icon">
@@ -50,18 +51,31 @@ class HomeHeader extends Component {
           <div className="login_location">
             {this.props.inform ? (
               <div className="main-btn" style={{ color: "#9b9b9b" }}>
-                <i className="fas fa-user-circle" style={{ color: "#dbdee3", fontSize: "36px" }} />
-                <h4 style={{ margin: "0 10px", fontSize: "18px", margin: "0px 8px" }}>
+                <i
+                  className="fas fa-user-circle"
+                  style={{ color: "#dbdee3", fontSize: "36px" }}
+                />
+                <h4
+                  style={{
+                    margin: "0 10px",
+                    fontSize: "18px",
+                    margin: "0px 8px",
+                  }}
+                >
                   {this.props.inform.taiKhoan}
                 </h4>
-                <button className="btn btn-dark logoutbtn" onClick={this.deleteStorgeUser}>Đăng Xuất</button>
+                <button
+                  className="btn btn-dark logoutbtn"
+                  onClick={this.deleteStorgeUser}
+                >
+                  Đăng Xuất
+                </button>
               </div>
             ) : (
               <div className="main-btn">
                 <i className="fas fa-user-circle" />
 
                 <Link to="/login">Đăng Nhập</Link>
-
               </div>
             )}
 
