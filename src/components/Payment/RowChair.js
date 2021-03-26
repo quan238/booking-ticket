@@ -60,7 +60,7 @@ class RowChair extends Component {
       >
         <div
           style={{
-            marginRight: "20px",
+            marginRight: "35px",
             padding: "0",
             width: "10px",
             fontSize: "23px",

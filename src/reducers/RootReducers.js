@@ -12,6 +12,7 @@ const rootReducer = combineReducers({
   getDetailMovie: getDetailMovie,
   getTicket: getTicket,
   ConfirmUser: ConfirmUser,
+  
 });
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));

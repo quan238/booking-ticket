@@ -1,113 +1,96 @@
-/* Calendar Section */
 .calendar {
   width: 100%;
   height: 100vh;
   background-color: rgb(10, 32, 41);
+  /* color:; */
 }
+
 .calendar .container {
   height: 70vh;
-  display: flex;
-  /* align-items: center; */
-  justify-content: center;
+
   background: white;
-  border-radius: 3px;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgb(0 0 0 / 30%);
   padding: 0;
 }
-.calendar .container .row {
-  width: 100%;
+.nav-link {
+  /* background-color: rgba(246, 246, 246, 0.5); */
+  /* background-color: #fff!important; */
+  opacity: 0.5;
 }
-.calendar .container .row .col-3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-  border-right: 1px solid #f0f0f1;
+.nav-link.active {
+  background-color: #fff !important;
+  /* border: #000000 1px solid; */
+  opacity: 1;
+  /* box-shadow: 3px 3px 1px #ccc; */
+  box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
 }
-.calendar .container .row .col-3 .cinema {
+.calendar .cinema {
   display: flex;
   width: 100%;
   flex-direction: row;
   align-items: center;
   padding: 20px 15px;
 }
-.calendar .container .row .col-3 .cinema .logo-cinema {
+.calendar .cinema .logo-cinema {
   width: 50px;
   height: 50px;
   margin: 0px 7px 0px 0px;
 }
-.calendar .container .row .col-3 .cinema .logo-cinema img {
+.calendar .cinema .logo-cinema img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.calendar .container .row .col-3 .cinema .cinema-name {
+.calendar .cinema .cinema-name {
   font-size: 16px;
+  color: #000000;
+  font-weight: 600;
 }
 
-.calendar .container .row .col-9 {
-  padding: 0;
-}
-.calendar .container .row .col-9 .dayOfWeek {
-  width: 100%;
-  height: 90px;
-  padding: 16px 0;
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
-.calendar .container .row .col-9 .dayOfWeek .days {
-  /* width: 200px; */
-  display: inline-flex;
-  align-items: center;
-}
-.calendar .container .row .col-9 .dayOfWeek .selectedDay {
-  width: 90px;
-  height: 57px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 .calendar .container .row .col-9 .dayOfWeek .selectedDay p {
   margin: 0;
 }
 
-.calendar .container .row .col-9 .chooseTime {
+.calendar .chooseCinema {
+  width: 100%;
+  height: 99%;
+  /* overflow-y: scroll; */
+  /* overflow-y: scroll; */
+  /* overflow-x: hidden; */
+}
+.calendar .chooseTime {
   width: 100%;
   padding: 20px 20px 10px;
+  border-bottom: 1px solid #f0f0f1;
+  float: left;
 }
-.calendar .container .row .col-9 .chooseTime .cinema-info {
+.calendar .chooseTime .cinema-info {
   display: flex;
   padding: 0px 0px 20px;
 }
-.calendar .container .row .col-9 .chooseTime .cinema-info .cinema-img {
+.calendar .chooseTime .cinema-info .cinema-img {
   width: 50px;
   height: 50px;
 }
-.calendar .container .row .col-9 .chooseTime .cinema-info .cinema-img img {
+.calendar .chooseTime .cinema-info .cinema-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.calendar .container .row .col-9 .chooseTime .cinema-info .info {
+.calendar .chooseCinema .chooseTime .cinema-info .info {
   display: flex;
   flex-direction: column;
   margin: 0px 10px;
   color: #9b9b9b;
   font-size: 13px;
 }
-.calendar
-  .container
-  .row
-  .col-9
-  .chooseTime
-  .cinema-info
-  .info
-  span:nth-child(1) {
+.calendar .chooseTime .cinema-info .info span:nth-child(1) {
   font-size: 16px;
   color: #fa5639;
+  font-weight: 600;
 }
-.calendar .container .row .col-9 .chooseTime .timeSection {
+.calendar .chooseCinema .chooseTime .timeSection {
   padding-left: 0;
   padding-top: 0;
   line-height: 1;
@@ -116,14 +99,14 @@
   float: left;
   margin-bottom: 5px;
 }
-.calendar .container .row .col-9 .chooseTime .typeOfFilm {
+.calendar .chooseTime .typeOfFilm {
   margin: 0px 0px 5px;
   font-weight: 600;
 }
-.calendar .container .row .col-9 .chooseTime .timeSection .timeInDay {
+.calendar .chooseTime .timeSection .timeInDay {
   width: calc(25% - 10px);
   float: left;
-  /* font-family: 'SF Medium'; */
+  /* font-family: "SF Medium"; */
   font-size: 14px;
   font-weight: 400;
   margin: 0 10px 10px 0;
@@ -133,38 +116,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* text-align: center; */
   background-color: rgba(246, 246, 246, 0.5);
   border-radius: 7px;
   color: #9b9b9b;
   border: 1px solid #e4e4e4;
   letter-spacing: -0.12px;
 }
-.calendar
-  .container
-  .row
-  .col-9
-  .chooseTime
-  .timeSection
-  .timeInDay
-  .time-start {
+.calendar .chooseTime .timeSection .timeInDay .time-start {
   font-size: 18px;
   font-weight: 500;
   color: #108f3e;
   letter-spacing: -0.16px;
   padding-right: 5px;
 }
-.calendar
-  .container
-  .row
-  .col-9
-  .chooseTime
-  .timeSection
-  .timeInDay
-  .time-start:hover {
+.calendar .chooseTime .timeSection .timeInDay .time-start:hover {
   color: #fa5639;
 }
-.calendar .container .row .col-9 .chooseTime .timeSection .timeInDay p {
+.calendar .chooseTime .timeSection .timeInDay p {
   margin: 0;
 }
-/* End Calendar Section */

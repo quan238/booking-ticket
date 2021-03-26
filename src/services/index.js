@@ -16,6 +16,13 @@ export default class MovieService {
       // mimeType: "json",
     });
   }
+  async fetchDetailPayment(maPhim) {
+    return await Axios({
+      url: `https://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${maPhim}`,
+      method: "GET",
+      // mimeType: "json",
+    });
+  }
   // fetchDetailTheater(maPhim){
   //   return Axios({
   //     url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`,

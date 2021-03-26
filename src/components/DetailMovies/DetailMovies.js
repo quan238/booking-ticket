@@ -8,6 +8,9 @@ import { getDetailsAPI } from "../../actions/movieActions/GetDetails";
 import { navLink, Link } from "react-router-dom";
 import Calendar from "../Calendar/Calendar";
 import InfoDetail from "./InfoDetail";
+import SmoothScrolling from "../App/assets/js/smoothScrolling";
+// import SmoothScrolling from "../../../node_modules/";
+
 class DetailMovies extends Component {
   constructor() {
     super();
@@ -15,6 +18,10 @@ class DetailMovies extends Component {
     this.state = {
       status: true,
     };
+    this.scrollUp = this.scrollUp.bind(this);
+  }
+  scrollUp() {
+    SmoothScrolling.scrollTo("lichChieu");
   }
   changeActive() {
     this.setState({ status: !this.state.status });
@@ -80,13 +87,15 @@ class DetailMovies extends Component {
                     <h5 className="m-0">{detail_movie.tenPhim}</h5>
                   </div>
                   <p className="m-0 mb-1">128 phút - 0 IMDb -</p>
-                  <Link
-                    to={`/details/movie/${detail_movie.maPhim}/payment`}
+                  <a
+                    // to={`/details/movie/${detail_movie.maPhim}/payment`}
+                    onClick={this.scrollUp}
                     className="btnBuy text-light"
                   >
                     Mua Vé
-                  </Link>
+                  </a>
                 </div>
+                {/*  */}
               </div>
               {/*Star*/}
               <div className="box">
@@ -119,7 +128,11 @@ class DetailMovies extends Component {
               </div>
             </div>
           </div>
-          <div className="navCenter " style={{ marginTop: "80px" }}>
+          <div
+            className="navCenter "
+            style={{ marginTop: "80px" }}
+            id="lichChieu"
+          >
             <ul>
               <li onClick={this.changeColor.bind(this)} className={title}>
                 Lịch Chiếu
@@ -134,10 +147,10 @@ class DetailMovies extends Component {
           {/* <Calendar></Calendar> */}
         </div>
         {/* <div className="container"> */}
-        <div onClick={this.changeActive.bind(this)} className={status}>
+        <div className={status}>
           <Calendar></Calendar>
         </div>
-        <div onClick={this.changeActive.bind(this)} className={status2}>
+        <div className={status2}>
           <InfoDetail></InfoDetail>
         </div>
 

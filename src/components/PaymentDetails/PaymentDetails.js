@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { connect } from "react-redux";
 import "./PaymentDetails.scss";
-
-import { getDetailsAPI } from "../../actions/movieActions/GetDetails";
+import {
+  getDetailPayment,
+  getDetailsAPI,
+} from "../../actions/movieActions/GetDetails";
 import Payment from "../Payment/Payment";
 // import { render } from "@testing-library/react";
 import swal from "sweetalert";
 // import { Link } from "react-router-dom";
-import Home from "../Home/Home";
-import { Redirect } from "react-router-dom";
+import emailjs from "emailjs-com";
 
 class PaymentDetails extends Component {
   //   console.log(props);
@@ -18,12 +18,27 @@ class PaymentDetails extends Component {
   //   const dispatch = useDispatch();
   // console.log(dispatc)
   //   useEffect(() => {
+  state = {
+    email: "",
+    phone: "",
+  };
 
+  handleChangeValue = (event) => {
+    let { name, value } = event.target;
+    this.setState(
+      {
+        [name]: value,
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
+  };
   componentDidMount() {
     let { id } = this.props.match.params;
     console.log(id);
     // console.log(dispatch(getDetailsAPI(id)));
-    this.props.dispatch(getDetailsAPI(id));
+    this.props.dispatch(getDetailPayment(id));
   }
   //   console.log(useSelector((state) => state.getDetailMovie));
   //   useEffect(() => {
@@ -48,21 +63,67 @@ class PaymentDetails extends Component {
   render() {
     let { detail_movie } = this.props;
     // console.log(item)
+    let thongTin = {};
+    thongTin = detail_movie.thongTinPhim;
+    // console.log(thongTinPhim);
     // console.log(this.props.detail_movie);
     let heThongRap = "BHD-STAR";
-    if (detail_movie.heThongRapChieu) {
-      console.log(this.props.detail_movie);
-      heThongRap = detail_movie.heThongRapChieu[0].maHeThongRap;
-      console.log(heThongRap);
-    }
-    let cumRapChieu = [];
-    if (detail_movie.heThongRapChieu) {
-      if (detail_movie.heThongRapChieu[0].cumRapChieu) {
-        cumRapChieu = detail_movie.heThongRapChieu[0].cumRapChieu;
-        console.log(cumRapChieu);
-      }
-    }
 
+    console.log(this.state);
+    // if (detail_movie.thongTinPhim) {
+    //   console.log(this.props.detail_movie);
+    //   // thongTinPhim = detail_movie.heThongRapChieu[0].maHeThongRap;
+    //   console.log(heThongRap);
+    // }
+    // let cumRapChieu = [];
+    // if (detail_movie.heThongRapChieu) {
+    //   if (detail_movie.heThongRapChieu[0].cumRapChieu) {
+    //     cumRapChieu = detail_movie.heThongRapChieu[0].cumRapChieu;
+    //     console.log(cumRapChieu);
+    //   }
+    // }
+    let tongTien = 0;
+    if (this.props.rowPurchased) {
+      tongTien = this.props.rowPurchased.reduce(
+        (tongTien, chairbooked, index) => {
+          tongTien += chairbooked.price;
+          // this.state.chairPrice = tongTien;
+          return tongTien;
+        },
+        0
+      );
+    }
+    let contentChair = "";
+    if (this.props.rowPurchased) {
+      this.props.rowPurchased.map((chairbooked, index) => {
+        return (contentChair += ` \GHẾ: ${chairbooked.number} `);
+      });
+    }
+    let nameMovie = "";
+    let nameCinema = "";
+    let time = "";
+    let theater = "";
+    let chair = "";
+    if (detail_movie.thongTinPhim) {
+      nameMovie = detail_movie.thongTinPhim.tenPhim;
+      nameCinema = detail_movie.thongTinPhim.tenCumRap;
+      time = detail_movie.thongTinPhim.gioChieu;
+      theater = detail_movie.thongTinPhim.tenRap;
+    }
+    // console.log(tongTien);
+    let templateParams = {
+      from_name: "GROUP-4",
+      email: this.state.email,
+      phone: this.state.phone,
+      nameMovie: nameMovie,
+      nameCinema: nameCinema,
+      theater: theater,
+      time: time,
+      prices: tongTien,
+      contentChair: contentChair,
+    };
+    console.log(templateParams);
+    // this.state.chairPrice = tongTien;
     // console.log(detail_movie);
     // console.log(this.props.rowPurchased);
     return (
@@ -75,17 +136,34 @@ class PaymentDetails extends Component {
               {this.props.rowPurchased &&
                 this.props.rowPurchased
                   .reduce((tongTien, chairbooked, index) => {
-                    return (tongTien += chairbooked.price);
+                    tongTien += chairbooked.price;
+                    // this.state.chairPrice = tongTien;
+                    return tongTien;
                   }, 0)
                   .toLocaleString()}
             </h1>
             <div className="booking-info">
               <div className="cinema-info mb-3">
-                <p>{detail_movie.biDanh}</p>
+                {detail_movie.thongTinPhim ? (
+                  <p>{detail_movie.thongTinPhim.tenPhim}</p>
+                ) : (
+                  " "
+                )}
+                {/* <p>{thongTin?.tenPhim}</p> */}
+
                 {/* {this.renderRap()} */}
                 {/* <p>{detail_movie.heThongRapChieu[0].maHeThongRap}</p> */}
-                <p>{heThongRap}</p>
-                <p className="time">{detail_movie.ngayKhoiChieu}</p>
+                {detail_movie.thongTinPhim ? (
+                  <p>{detail_movie.thongTinPhim.tenCumRap}</p>
+                ) : (
+                  " "
+                )}
+                {detail_movie.thongTinPhim ? (
+                  <p className="time">{detail_movie.thongTinPhim.ngayChieu}</p>
+                ) : (
+                  " "
+                )}
+                {/* <p className="time">{detail_movie.thongTinPhim.ngayChieu}</p> */}
               </div>
               <div className="chair mb-3">
                 {this.props.rowPurchased &&
@@ -112,22 +190,72 @@ class PaymentDetails extends Component {
                     );
                   })}
               </div>
+
               <form
                 className="customer-info"
                 ref="submitForm"
                 onSubmit={(e) => {
                   e.preventDefault();
                   if (e.target.checkValidity()) {
-                    swal(
-                      "Booking successfully",
-                      "You clicked the button!",
-                      "success"
-                    ).then(() => {
-                      //
-                      // <Redirect to="/"></Redirect>
-                      window.location.href = "/";
-                    });
+                    swal({
+                      title: "Are you sure?",
+                      text:
+                        "When you click OK, you will receive your information about ticket in your gmail!",
+                      icon: "warning",
+                      buttons: true,
+                      dangerMode: true,
+                    }).then((willDelete) => {
+                      if (willDelete) {
+                        swal(
+                          "Booking successfully",
+                          "You clicked the button!",
+                          "success"
+                        ).then(() => {
+                          //
+                          emailjs.send("service_t0jk43l", "template_qfne4yt");
+                          // e.preventDefault();
 
+                          // emailjs
+                          //   .send(
+                          //     "gmail",
+                          //     "template_qfne4yt",
+                          //     templateParams,
+                          //     "user_lqDsKfrF2RDYLZ2iGy1ss"
+                          //   )
+                          //   .then(
+                          //     (result) => {
+                          //       console.log(result.text);
+                          //     },
+                          //     (error) => {
+                          //       console.log(error.text);
+                          //     }
+                          //   );
+                          emailjs
+                            .send(
+                              "service_t0jk43l",
+                              "template_qfne4yt",
+                              templateParams,
+                              "user_lqDsKfrF2RDYLZ2iGy1ss"
+                            )
+                            .then(
+                              () => {
+                                // btn.value = "Send Email";
+                                window.location.href = "/";
+                              },
+                              (err) => {
+                                // btn.value = "Send Email";
+                                alert("error");
+                                // alert(JSON.stringify(err));
+                              }
+                            );
+
+                          // <Redirect to="/"></Redirect>
+                          // window.location.href = "/";
+                        });
+                      } else {
+                        swal("Booking Again!");
+                      }
+                    });
                     // <Link to="/" />;
 
                     e.target.value = "";
@@ -135,16 +263,20 @@ class PaymentDetails extends Component {
                 }}
               >
                 <input
-                  type="text"
-                  // required
+                  type="email"
+                  name="email"
+                  required
                   placeholder="E-Mail"
                   className="Email mb-3"
+                  onChange={this.handleChangeValue}
                 />
                 <input
                   type="tel"
                   placeholder="Phone"
-                  // required
+                  required
+                  name="phone"
                   className="Telephone mb-3"
+                  onChange={this.handleChangeValue}
                 />
                 <div className="discount mb-3">
                   <input type="text" placeholder="Mã giảm giá" />
@@ -184,7 +316,7 @@ const mapStateToProps = (state) => {
   return {
     detail_movie: state.getDetailMovie.result,
     rowPurchased: state.getTicket.rowPurchased,
- 
+    inform: state.ConfirmUser.credentials,
   };
 };
 export default connect(mapStateToProps)(PaymentDetails);

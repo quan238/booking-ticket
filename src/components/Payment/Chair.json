@@ -415,7 +415,7 @@
         {
           "number": "F8",
           "price": 85000,
-          "status": false
+          "status": true
         },
         {
           "number": "F9",

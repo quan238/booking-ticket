@@ -6,6 +6,7 @@ import { Form, Formik, Field } from "formik";
 import { signInUser } from "../../actions/authenticationActions/ConfirmUser";
 import { Link } from "react-router-dom";
 class Login extends Component {
+
   componentDidMount() {
     this.props.dispatch(getUser());
     // console.log(this.props.user);
@@ -134,7 +135,7 @@ class Login extends Component {
 const mapStateToProps = (state) => {
   return {
     user: state.getUser.user,
-    
+
     // confirmUser: state.ConfirmUser.credentials,
   };
 };
