@@ -1,0 +1,291 @@
+.detail {
+  width: 100%;
+  height: 90vh;
+  background-color: #0a2029 !important;
+  scroll-behavior: smooth;
+}
+
+.detail a {
+  padding: 8px 0;
+}
+
+.detail a:hover {
+  text-decoration: none;
+}
+
+.detail .banner {
+  /* top: 0;
+  left: 0; */
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* margin-top: 0px; */
+  /* margin-top: 219px; */
+  /* top: -100px; */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* Blur img */
+.detail .banner .img-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(15px);
+          filter: blur(15px);
+}
+
+.detail .banner .img-blur img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* End */
+.detail .banner .container {
+  width: 75% !important;
+  position: absolute;
+  /* margin-top: 50px; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/*  */
+.detail .banner .container .film-info {
+  /* position: absolute; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.detail .banner .container .film-info .info-image {
+  width: 250px;
+  height: 350px;
+}
+
+.detail .banner .container .film-info .info-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  right: 70%;
+}
+
+/* .banner .info-text p {
+  position: absolute;
+} */
+.detail .banner .container .film-info .info .info-text1 p {
+  background-color: orangered;
+  border-radius: 4px;
+  padding: 0 5px;
+  display: inline-block;
+  text-align: center;
+}
+
+.detail .banner .container .film-info .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* position: absolute; */
+}
+
+.detail .banner .container .film-info .info .btnBuy {
+  font-size: 1.5rem;
+  background-color: orangered;
+  border-radius: 4px;
+  text-align: center;
+  margin: 20px 0;
+  /* width: 8%; */
+  border: none;
+  -webkit-transition: ease 0.4s;
+  transition: ease 0.4s;
+}
+
+.detail .banner .container .film-info .info .btnBuy:focus {
+  outline: none;
+}
+
+.detail .banner .container .film-info .info .btnBuy:hover {
+  background-color: #b42a14;
+}
+
+.detail .box {
+  /* position: absolute; */
+  /* width: 300px; */
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.detail .box .percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.detail .box .percent svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background: rgba(29, 26, 26, 0.664);
+  border-radius: 80px;
+}
+
+.detail .box .percent svg circle {
+  width: 150px;
+  height: 150px;
+  fill: none;
+  stroke-width: 10;
+  stroke: #020202;
+  -webkit-transform: translate(5px, 5px);
+          transform: translate(5px, 5px);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+}
+
+.detail .box .percent svg circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke: #645e5e;
+}
+
+.detail .box .percent svg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 85) / 100);
+  stroke: #7ed321;
+}
+
+.detail .box .percent .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #f1f1f1;
+}
+
+.detail .box .percent .number h2 {
+  font-size: 48px;
+}
+
+.detail .box .text {
+  padding: 10px 0 0;
+  color: #999;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.detail .box .star {
+  /* margin:auto; */
+  margin-top: 10px;
+}
+
+.detail .box .star img {
+  max-width: 25px;
+  height: 25px;
+}
+
+.detail .navCenter {
+  width: 100%;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.detail .navCenter ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0;
+}
+
+.detail .navCenter ul li {
+  padding: 0px 20px;
+  -webkit-transition: font-size 300ms;
+  transition: font-size 300ms;
+  color: white;
+}
+
+.detail .navCenter ul li:hover {
+  font-size: 32px;
+}
+
+.Active {
+  font-size: 30px;
+}
+
+.noActive {
+  color: #111;
+  font-size: 24px;
+}
+
+.ActiveStatus {
+  display: block;
+}
+
+.noActiveStatus {
+  display: none;
+}
+/*# sourceMappingURL=DetailMovies.css.map */

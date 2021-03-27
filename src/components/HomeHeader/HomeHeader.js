@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./HomeHeader.scss";
-import "../Responsive/R-HomeHeader.css"
+// import "../Responsive/R-HomeHeader.css"
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import youtube from "../App/assets/img/youtube-logo-2020.svg";
 import ReactLogo from '../../logo.svg';
 import facebook from "../App/assets/img/facebook-logo@logotyp.us.svg"
+// import "../Responsive/resonspive.css  "
 class HomeHeader extends Component {
   deleteStorgeUser = () => {
     // console.log("a")

@@ -1,0 +1,72 @@
+.chair-book {
+  background-color: #3e515d;
+  border-radius: 8px;
+  margin: 10px;
+  position: relative;
+}
+
+.chair-booked2 {
+  background-color: #3e515d;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.note {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-left: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.note_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.note:nth-child(2) {
+  margin: 0 20px;
+}
+
+.statusChair {
+  background-color: orange;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: no-drop !important;
+}
+
+.seat {
+  content: "\e909";
+}
+
+.chairBooked {
+  background-color: #6dee6d;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.numberDisplay {
+  display: block !important;
+  color: white;
+  position: absolute;
+  left: 16%;
+  top: 10%;
+}
+
+.note p {
+  color: gray;
+  font-size: 20px;
+}
+/*# sourceMappingURL=RowChair.css.map */

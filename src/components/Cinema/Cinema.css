@@ -1,116 +1,176 @@
-
 .news img {
-    width: 150px;
+  width: 150px;
 }
 .news p {
-    margin: 0;
+  margin: 0;
 }
 .news .container {
-    max-width: 1000px;
-    border: 1px solid #f0f0f1;
-    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+  max-width: 1000px;
+  border: 1px solid #f0f0f1;
+  box-shadow: 0 0 10px rgb(0 0 0 / 30%);
 }
 .news .row .col-1 {
-    /* width: 70%; */
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-right: 1px solid #f0f0f1;
+  /* width: 70%; */
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #f0f0f1;
 }
-.news .row .col-1 .logo-cinema{
-    width: 50px;
-    padding-top: 20px;
-    margin: 0;
-    opacity: .5;
-    transition: opacity 300ms;
+.news .row .col-1 .logo-cinema {
+  width: 50px;
+  padding-top: 20px;
+  margin: 0;
+  opacity: 0.5;
+  transition: opacity 300ms;
 }
 .news .row .col-1 .logo-cinema:hover {
-    opacity: 1;
+  opacity: 1;
 }
 .news .row .col-1 .logo-cinema img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.news .cinema-info, .film {
-    display: flex;
+.news .cinema-info,
+.film {
+  display: flex;
 }
 
 .news .row .col-3 {
-    padding: 0px;
-    border-right: 1px solid #f0f0f1;
+  padding: 0px;
+  border-right: 1px solid #f0f0f1;
 }
 .news .row .col-3 .cinema-info {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* justify-content: center; */
-    padding: 20px 15px;
-    border-bottom: 1px solid #f0f0f1;
-    opacity: .5;
-    transition: opacity 300ms;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+  padding: 20px 15px;
+  border-bottom: 1px solid #f0f0f1;
+  opacity: 0.5;
+  transition: opacity 300ms;
 }
 .news .row .col-3 .cinema-info:hover {
-    opacity: 1;
+  opacity: 1;
 }
 .news .row .col-3 .cinema-info .cinema-location {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
-    padding-left: 7px;
-    font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  padding-left: 7px;
+  font-size: 15px;
 }
 .news .row .col-3 .cinema-info .cinema-location p:nth-child(1) {
-    color: #8bc541;
+  color: #8bc541;
 }
 .news .row .col-3 .cinema-info .cinema-img {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 .news .row .col-3 .cinema-info .cinema-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
-
 
 .news .row .col-7 {
-    padding: 0px;
+  padding: 0px;
 }
 .news .row .col-7 .film {
-    display: flex;
-    align-items: center;
-    padding: 20px 15px;
-    border-bottom: 1px solid #f0f0f1;
-    opacity: .5;
-    transition: opacity 300ms;
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+  border-bottom: 1px solid #f0f0f1;
+  opacity: 0.5;
+  transition: opacity 300ms;
 }
 .news .row .col-7 .film:hover {
-    opacity: 1;
+  opacity: 1;
 }
 .news .row .col-7 .film .film-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 7px;
 }
 .news .row .col-7 .film .film-info p:nth-child(1) {
-    color: black;
-    font-weight: 500;
+  color: black;
+  font-weight: 500;
 }
 .news .row .col-7 .film .film-info p {
-    color: #9b9b9b;
-    font-weight: 100;
+  color: #9b9b9b;
+  font-weight: 100;
 }
 .news .row .col-7 .film .film-img {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 .news .row .col-7 .film .film-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 779px) and (max-width: 991px) {
+  .news .col-3 p {
+    font-size: 14px;
+  }
+  .news .col-7 p {
+    font-size: 16px;
+  }
+  .news .container {
+    max-width: 779px;
+  }
+}
+@media (min-width: 568px) and (max-width: 779px) {
+  .news .col-3 p {
+    font-size: 10px;
+    padding-left: 20px;
+  }
+  .news .col-7 p {
+    font-size: 12px;
+  }
+  .news .container {
+    max-width: 568px;
+  }
+  .news .row .col-1 .logo-cinema img {
+    width: 75%;
+  }
+  .news .row .col-1 {
+    padding-left: 15px;
+    padding-top: 30px;
+  }
+}
+@media (min-width: 320px) and (max-width: 568px) {
+  .news .col-3 p {
+    font-size: 7px;
+    padding-left: 20px;
+  }
+  .news .col-7 p {
+    font-size: 9px;
+  }
+  .news .container {
+    max-width: 320px;
+  }
+
+  .news .row .col-3 .cinema-info .cinema-img img {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  .news .row .col-1 .logo-cinema img {
+    width: 60%;
+  }
+  .news .row .col-3 .cinema-info {
+    padding-left: 0;
+  }
+  .news .row .col-1 {
+    padding-left: 35px;
+    padding-top: 30px;
+  }
+  .news {
+    display: none;
+  }
 }
