@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./Film_Manage.scss";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+// import Carousel from "react-multi-carousel";
+// import "react-multi-carousel/lib/styles.css";
 import { getMovieAPI } from "../../actions/movieActions/GetMovie";
 import { connect } from "react-redux";
 // import Slider from "react-slick";
-import "../../../node_modules/react-multi-carousel/lib/styles.css";
+// import "../../../node_modules/react-multi-carousel/lib/styles.css";
 // import Async from "react-async";
 import { NavLink, Link } from "react-router-dom";
 import Slider from "react-slick";

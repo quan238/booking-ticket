@@ -13,8 +13,7 @@
   transition: 0.3s ease background-color;
   /* background: pink; */
   /* margin-bottom: 100px; */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .logo {
   height: 140px;
@@ -88,3 +87,18 @@
   // color:#fff
 }
 /* Edn Header Section */
+
+@media screen and (min-width: 568px) {
+}
+@media screen and(min-width: 768px) {
+}
+
+@media screen and (min-width: 991px) {
+}
+
+@media screen and (min-width: 1200px) {
+  .menu li a {
+    // color: white;
+    font-size: 60px;
+  }
+}

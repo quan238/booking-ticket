@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./HomeHeader.scss";
-
+import "../Responsive/R-HomeHeader.css"
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
