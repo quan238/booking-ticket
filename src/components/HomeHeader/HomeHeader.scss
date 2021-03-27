@@ -87,18 +87,44 @@
   // color:#fff
 }
 /* Edn Header Section */
-
-@media screen and (min-width: 568px) {
+@media (min-width: 1221px){
+ 
 }
-@media screen and(min-width: 768px) {
-}
-
-@media screen and (min-width: 991px) {
+@media (min-width: 991px) and (max-width: 1200px) {
+ 
 }
 
-@media screen and (min-width: 1200px) {
-  .menu li a {
-    // color: white;
-    font-size: 60px;
-  }
+@media (min-width: 779px) and (max-width: 991px) {
+
 }
+
+@media (min-width: 568px) and (max-width: 779px) {
+
+}
+// @media screen and (max-width: 568px) {
+ 
+// }
+
+// @media screen and (max-width: 2000px) {
+//   .menu li a {
+//     font-size: 60px;
+//     color: yellow;
+//   }
+// }
+
+
+// @media screen and (max-width: 567000px) {
+//   .menu li a {
+//     font-size: 60px;
+//     color: red;
+//   }
+// }
+
+// @media screen and (max-width: 2800px) {
+ 
+//   .menu li a {
+//     font-size: 60px;
+//     color: blue;
+//   }
+// }
+

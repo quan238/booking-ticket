@@ -54,8 +54,8 @@ class DetailMovies extends Component {
 
     let a = this.props.detail_movie.danhGia;
     return (
-      <div>
-        <HomeHeader></HomeHeader>
+      <div className="All">
+        {/* <HomeHeader></HomeHeader> */}
         <div className="detail">
           <div className="banner">
             <div className="img-blur">
@@ -89,7 +89,7 @@ class DetailMovies extends Component {
                     </p>
                     <h3 className="m-0">{detail_movie.tenPhim}</h3>
                   </div>
-                  <p className="m-0 mb-1">128 phút - 0 IMDb -</p>
+                  {/* <p className="m-0 mb-1">128 phút - 0 IMDb -</p> */}
                   <a
                     // to={`/details/movie/${detail_movie.maPhim}/payment`}
                     onClick={this.scrollUp}
@@ -155,7 +155,7 @@ class DetailMovies extends Component {
         </div>
 
         {/* </div> */}
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </div>
     );
   }

@@ -1,3 +1,7 @@
+.All {
+  width: 100%;
+}
+
 .detail {
   width: 100%;
   height: 90vh;
@@ -207,4 +211,53 @@
 }
 .noActiveStatus {
   display: none;
+}
+
+@media (min-width: 991px) and (max-width: 1200px) {
+
+}
+
+@media (min-width: 779px) and (max-width: 991px) {
+
+}
+
+// Big Phone
+@media (min-width: 568px) and (max-width: 778px) {
+  .detail .box {
+    display: none;
+  }
+}
+// Small Phone
+@media (min-width: 320px) and (max-width: 568px) {
+  .detail .box {
+    display: none;
+  }
+  .detail .banner .container {
+    justify-content: center;
+  }
+  .detail .banner .container .film-info {
+    flex-direction: column;
+  }
+  .detail .banner .container .film-info .info {
+    margin-top: 20px !important;
+    margin-left: 0px !important;
+  }
+  .ActiveStatus .calendar .container .row {
+    margin-right: 0px;
+  }
+
+  .detail .navCenter {
+    margin-top: 50px;
+  }
+  .detail .navCenter ul li {
+    font-size: 17px;
+  }
+  .detail .navCenter ul li:hover {
+    font-size: 22px;
+    // color: white;
+  }
+  .calendar .chooseTime .timeSection .timeInDay {
+    width: calc(35% - 10px) !important;
+    padding: 8px 10px !important;
+  }
 }
