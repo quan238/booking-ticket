@@ -7,14 +7,13 @@
   height: 90vh;
   background-color: rgb(10, 32, 41) !important;
   scroll-behavior: smooth;
-
 }
-.detail a{
+.detail a {
   // text-bor: none;
   padding: 8px 0;
   // text-decoration: none;
 }
-.detail a:hover{
+.detail a:hover {
   text-decoration: none;
 }
 .detail .banner {
@@ -207,24 +206,60 @@
   display: block;
   // animation: fadeIn ease 1s;
   // transition: 2s opacity ease;
-
 }
 .noActiveStatus {
   display: none;
 }
 
 @media (min-width: 991px) and (max-width: 1200px) {
-
 }
 
 @media (min-width: 779px) and (max-width: 991px) {
-
+  .calendar .col-8 {
+    max-height: 650px !important;
+  }
+  .calendar .flex-column {
+    border-right: none !important;
+    height: 500px !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+  }
+  .detail .box {
+    margin-left: 50px;
+  }
+  .detail .banner .container {
+    margin-top: 50px !important;
+  }
 }
 
 // Big Phone
 @media (min-width: 568px) and (max-width: 778px) {
+  .detail {
+    height: 100vh;
+  }
   .detail .box {
     display: none;
+  }
+  .detail .banner .container {
+    margin-top: 60px !important;
+  }
+  .calendar .col-8 {
+    max-height: 606px !important;
+  }
+  .calendar .flex-column {
+    border-right: none !important;
+  }
+  .calendar .flex-column {
+    border-right: none !important;
+    height: 500px !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+  }
+  .calendar .nav-link {
+    padding: 0rem 0rem !important;
+  }
+  .detailInfo {
+    height: 100vh !important;
   }
 }
 // Small Phone
@@ -237,6 +272,7 @@
   }
   .detail .banner .container .film-info {
     flex-direction: column;
+    margin-top: 164px;
   }
   .detail .banner .container .film-info .info {
     margin-top: 20px !important;
@@ -245,19 +281,59 @@
   .ActiveStatus .calendar .container .row {
     margin-right: 0px;
   }
-
+  .detail .banner {
+    // height: 100vh !important;
+  }
   .detail .navCenter {
     margin-top: 50px;
   }
+  .detail .navCenter ul {
+    margin-top: 60px !important;
+  }
   .detail .navCenter ul li {
-    font-size: 17px;
+    font-size: 22px;
   }
   .detail .navCenter ul li:hover {
-    font-size: 22px;
+    font-size: 25px;
     // color: white;
   }
   .calendar .chooseTime .timeSection .timeInDay {
     width: calc(35% - 10px) !important;
     padding: 8px 10px !important;
+    margin: 0 5px 0px 30px!important;
+    white-space: nowrap;
+  }
+  .detail {
+    height: 100vh;
+  }
+  .detailInfo {
+    height: 100vh !important;
+  }
+  .detail .box {
+    display: none;
+  }
+  .detail .banner .container {
+    margin-top: 60px !important;
+  }
+  .calendar .chooseTime .cinema-info .info span:nth-child(1) {
+    font-size: 18px !important;
+  }
+  .calendar .cinema {
+    padding: 10 !important;
+  }
+  .calendar .col-8 {
+    max-height: 568px !important;
+  }
+  .calendar .flex-column {
+    border-right: none !important;
+  }
+  .calendar .flex-column {
+    border-right: none !important;
+    height: 500px !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+  }
+  .detailInfo .row {
+    margin-left: 0 !important ;
   }
 }

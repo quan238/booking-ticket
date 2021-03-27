@@ -22,7 +22,7 @@ export default class BookingChair extends Component {
           </div>
         </div>
         <div className="container">{renderHangGhe()}</div>
-        <div class="note_button">
+        {/* <div class="note_button">
           <div className="note">
             <button className="chairBooked "></button>
             <span></span>
@@ -34,7 +34,7 @@ export default class BookingChair extends Component {
           <div className="note">
             <button className="statusChair"></button>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

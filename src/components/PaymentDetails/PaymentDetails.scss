@@ -1,73 +1,311 @@
-
 /* RightCheckOut */
 .rightCheckout {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  top: 0;
+  right: 0;
+  width: 22%;
+  height: 100%;
+  // box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
+}
+.rightCheckout .all-contents {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+.price {
+  color: #44c020;
+}
+.customer-info input {
+  width: 100%;
+  border: none;
+  border-bottom: dotted 1px #9b9b9b;
+  outline: none;
+  padding-bottom: 10px;
+}
+.customer-info .discount {
+  display: flex;
+  flex-direction: row;
+}
+.discount .btn-apply {
+  width: 20%;
+  font-size: 11px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background: #afafaf;
+}
+.payment .paymentMethod {
+  display: flex;
+  align-items: center;
+}
+.paymentMethod input {
+  width: 22px;
+  height: 22px;
+}
+.paymentMethod i {
+  font-size: 20px;
+}
+.btn-order {
+  position: absolute;
+  width: 100%;
+  height: 7%;
+  bottom: 0;
+  right: 0;
+  background: #afafaf;
+  color: white;
+  font-size: 20px;
+  border: none;
+}
+.btn-order:focus {
+  outline: none;
+}
+/* End RightCheckOut */
+@media (min-width: 991px) and (max-width: 1200px) {
+}
+
+@media (min-width: 779px) and (max-width: 991px) {
+  .topContent {
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
+    width: 100%;
     top: 0;
-    right: 0;
-    width: 22%;
-    height: 100%;
-    // box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
+    left: 0;
   }
-  .rightCheckout .all-contents {
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 500;
+  .contentcinema {
+    margin-left: 50px;
+  }
+  .chair-book {
+    padding: 15px !important ;
+    margin: 5px;
+  }
+  .rightCheckout {
+    position: absolute;
+    width: 100%;
+    top: 120%;
+  }
+  .screen {
+    display: none;
+  }
+  #root .stepChecking {
+    position: relative !important;
+    width: 100% !important ;
+    justify-content: start !important;
+    .main-btn {
+      padding: 15px;
+    }
   }
   .price {
-    color: #44c020;
+    position: absolute;
+    top: -133%;
+    left: 30%;
+    z-index: 999999999;
   }
-  .customer-info input {
-    width: 100%;
-    border: none;
-    border-bottom: dotted 1px #9b9b9b;
-    outline: none;
-    padding-bottom: 10px;
+  .rightCheckout .all-contents {
+    align-items: flex-start;
   }
-  .customer-info .discount {
-    display: flex;
-    flex-direction: row;
-  }
-  .discount .btn-apply {
-    width: 20%;
-    font-size: 11px;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    background: #afafaf;
-  }
-  .payment .paymentMethod {
+  .topContent {
+    left: 0 !important;
+    width: 100% !important;
+    // .container {
+    //   width: 0%;
+    // }
+    .container.mt-3 {
+      justify-content: space-between !important;
+      overflow-y: scroll !important;
+    }
+    .mt-3 {
+      margin-top: 100px !important;
+    }
+    .col-3 {
       display: flex;
-      align-items: center;
+    }
+
+    .contentcinema {
+      margin-left: 0px;
+      display: flex;
+      flex-direction: row;
+      white-space: nowrap;
+      // overflow: hidden;
+      text-overflow: ellipsis;
+      p {
+        display: inline-block;
+        span {
+          padding: 0 20px;
+        }
+        // width: 100%;
+      }
+    }
   }
-  .paymentMethod input {
-      width: 22px;
-      height: 22px;
+  .stepChecking ul {
+    // display: f;
+    flex-direction: column !important;
+    margin: 0 0 0 20px !important;
   }
-  .paymentMethod i{
-      font-size: 20px;
+}
+
+@media (min-width: 568px) and (max-width: 779px) {
+  .topContent {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
   }
-  .btn-order{
-      position: absolute;
-      width: 100%;
-      height: 7%;
-      bottom: 0;
-      right: 0;
-      background: #afafaf;
-      color: white;
-      font-size: 20px;
-      border: none;
+  .contentcinema {
+    margin-left: 50px;
   }
-  .btn-order:focus{
-      outline: none;
+  .chair-book {
+    padding: 15px !important ;
+    margin: 5px;
   }
-  /* End RightCheckOut */
-  
+  .rightCheckout {
+    position: absolute;
+    width: 100%;
+    top: 150%;
+  }
+  .screen {
+    display: none;
+  }
+  #root .stepChecking {
+    position: relative !important;
+    width: 100% !important ;
+    justify-content: start !important;
+    .main-btn {
+      padding: 15px;
+    }
+  }
+  .price {
+    position: absolute;
+    top: -133%;
+    left: 30%;
+    z-index: 999999999;
+  }
+  .rightCheckout .all-contents {
+    align-items: flex-start;
+  }
+  .topContent {
+    left: 0 !important;
+    width: 100% !important;
+    // .container {
+    //   width: 0%;
+    // }
+    .container.mt-3 {
+      justify-content: space-between !important;
+      overflow-y: scroll !important;
+    }
+    .mt-3 {
+      margin-top: 100px !important;
+    }
+    .col-3 {
+      display: flex;
+    }
+
+    .contentcinema {
+      margin-left: 0px;
+      display: flex;
+      flex-direction: row;
+      white-space: nowrap;
+      // overflow: hidden;
+      text-overflow: ellipsis;
+      p {
+        display: inline-block;
+        span {
+          padding: 0 20px;
+        }
+        // width: 100%;
+      }
+    }
+  }
+  .stepChecking ul {
+    // display: f;
+    flex-direction: column !important;
+    margin: 0 0 0 20px !important;
+  }
+}
+@media (min-width: 320px) and (max-width: 568px) {
+  // position: none;
+  .topContent {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  .contentcinema {
+    margin-left: 50px;
+  }
+  .chair-book {
+    padding: 15px !important ;
+    margin: 5px;
+  }
+  .rightCheckout {
+    position: absolute;
+    width: 100%;
+    top: 125%;
+  }
+  .screen {
+    display: none;
+  }
+  #root .stepChecking {
+    position: relative !important;
+    width: 100% !important ;
+    justify-content: start !important;
+    .main-btn {
+      padding: 15px;
+    }
+  }
+  .price {
+    position: absolute;
+    top: -105%;
+    left: 30%;
+    z-index: 999999999;
+  }
+  .rightCheckout .all-contents {
+    align-items: flex-start;
+  }
+  .topContent {
+    left: 0 !important;
+    width: 100% !important;
+    // .container {
+    //   width: 0%;
+    // }
+    .container.mt-3 {
+      justify-content: space-between !important;
+      overflow-y: scroll !important;
+    }
+    .mt-3 {
+      margin-top: 100px !important;
+    }
+    .col-3 {
+      display: flex;
+    }
+
+    .contentcinema {
+      margin-left: 0px;
+      display: flex;
+      flex-direction: column;
+      white-space: nowrap;
+     
+      // overflow: hidden;
+      text-overflow: ellipsis;
+      p {
+        display: inline-block;
+        span {
+          padding: 0 20px;
+        }
+        // width: 100%;
+      }
+    }
+  }
+  .stepChecking ul {
+    // display: f;
+    flex-direction: column !important;
+    margin: 0 0 0 20px !important;
+  }
+}

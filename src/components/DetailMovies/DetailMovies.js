@@ -55,7 +55,7 @@ class DetailMovies extends Component {
     let a = this.props.detail_movie.danhGia;
     return (
       <div className="All">
-        {/* <HomeHeader></HomeHeader> */}
+        <HomeHeader></HomeHeader>
         <div className="detail">
           <div className="banner">
             <div className="img-blur">

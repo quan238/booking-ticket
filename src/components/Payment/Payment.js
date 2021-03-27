@@ -37,8 +37,12 @@ class Payment extends Component {
               </p>
               {this.props.detail_movie.thongTinPhim ? (
                 <p className="hour ng-binding">
-                  Hôm Nay - {this.props.detail_movie.thongTinPhim.tenRap} -{" "}
-                  {this.props.detail_movie.thongTinPhim.gioChieu}{" "}
+                  <span>
+              
+                    Hôm Nay - {
+                      this.props.detail_movie.thongTinPhim.tenRap
+                    } - {this.props.detail_movie.thongTinPhim.gioChieu}
+                  </span>
                 </p>
               ) : (
                 ""

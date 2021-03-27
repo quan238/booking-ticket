@@ -70,6 +70,30 @@ class Film extends Component {
       speed: 500,
       rows: 2,
       slidesPerRow: 1,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3,
+            slidesPerRow: 1,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 568,
+          settings: {
+            slidesToShow: 1,
+            rows: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
     };
     const responsive = {
       desktop: {

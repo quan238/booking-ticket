@@ -49,7 +49,7 @@
 }
 .film_info {
   margin: 8px 0px 20px 3px;
-  
+
   display: flex;
   align-items: center;
 
@@ -126,4 +126,24 @@
   margin-right: 8px;
 }
 
+@media (min-width: 991px) and (max-width: 1200px) {
+}
 
+@media (min-width: 779px) and (max-width: 991px) {
+}
+
+@media (min-width: 568px) and (max-width: 779px) {
+}
+@media (min-width: 320px) and (max-width: 568px) {
+  .slick-prev {
+    left: 0 !important;
+  }
+  .slick-next {
+    right: 0 !important;
+  }
+  .film-img {
+    height: 300px;
+     width: 100%; 
+    border-radius: 4%;
+  }
+}

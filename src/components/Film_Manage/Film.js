@@ -69,12 +69,37 @@ class Film extends Component {
       speed: 500,
       rows: 2,
       slidesPerRow: 1,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3,
+            slidesPerRow: 1,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 568,
+          settings: {
+            slidesToShow: 1,
+            rows: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
     };
     const responsive = {
       desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 3,
-        slidesToSlide: 3, // optional, default to 1.
+        slidesToShow: 3,
+        slidesPerRow: 1,
+        // optional, default to 1.
       },
       tablet: {
         breakpoint: { max: 1024, min: 464 },
@@ -87,7 +112,11 @@ class Film extends Component {
         slidesToSlide: 1, // optional, default to 1.
       },
     };
-    return <Slider {...settings}>{this.renderItem()}</Slider>;
+    return (
+      <Slider {...settings} {...responsive}>
+        {this.renderItem()}
+      </Slider>
+    );
   }
 }
 const mapStateToProps = (state) => {

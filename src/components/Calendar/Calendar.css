@@ -18,6 +18,8 @@
   /* border-bottom: 1px solid #ebebec; */
   border-right: 1px solid #ebebec;
   /* border-top-left-radius: 4px; */
+  height: 100%;
+
   /* border-bottom-left-radius: 4px; */
 }
 .nav-link {
@@ -31,6 +33,9 @@
   opacity: 1;
   /* box-shadow: 3px 3px 1px #ccc; */
   box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
+}
+.calendar .col-8 {
+  max-height: 910px;
 }
 .calendar .cinema {
   display: flex;
@@ -61,8 +66,9 @@
 
 .calendar .chooseCinema {
   width: 100%;
-  height: 99%;
-  /* overflow-y: scroll; */
+
+  height: 75%;
+  overflow-y: auto;
   /* overflow-y: scroll; */
   /* overflow-x: hidden; */
 }
@@ -128,7 +134,6 @@
   color: #9b9b9b;
   border: 1.5px solid #e4e4e4;
   letter-spacing: -0.12px;
-
 }
 .calendar .chooseTime .timeSection .timeInDay .time-start {
   font-size: 18px;
