@@ -88,17 +88,46 @@
 }
 /* Edn Header Section */
 
-@media screen and (min-width: 568px) {
-}
-@media screen and(min-width: 768px) {
+// @media screen and (min-width: 568px) {
+// }
+// @media screen and(min-width: 768px) {
+// }
+
+// @media screen and (min-width: 991px) {
+// }
+
+// @media screen and (min-width: 1200px) {
+//   .menu li a {
+//     // color: white;
+//     font-size: 60px;
+//   }
+// }
+
+/* Edn Header Section */
+// @media only screen and (max-width: 1200px) {
+//   .menu li a {
+//     // color: white;
+//     font-size: 60px;
+//   }
+// }
+
+// @media only screen and (max-width: 991px) {
+
+// }
+// @media only screen and (max-width: 779px) {
+
+// }
+// @media only screen and (max-width: 568px) {
+
+// }
+@media (min-width: 991px) and (max-width: 1200px) {
+
 }
 
-@media screen and (min-width: 991px) {
+@media (min-width: 779px) and (max-width: 991px) {
+
 }
 
-@media screen and (min-width: 1200px) {
-  .menu li a {
-    // color: white;
-    font-size: 60px;
-  }
+@media (min-width: 568px) and (max-width: 779px) {
+
 }

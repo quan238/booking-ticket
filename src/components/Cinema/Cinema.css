@@ -114,3 +114,62 @@
     height: 100%;
     object-fit: cover;
 }
+
+@media (min-width: 779px) and (max-width: 991px) {
+    .news .col-3 p{
+        font-size:14px;
+    }
+    .news .col-7 p{
+        font-size: 16px;
+    }
+    .news .container{
+        max-width: 779px;
+    }
+}
+@media (min-width: 568px) and (max-width: 779px) {
+    .news .col-3 p{
+        font-size:10px;
+        padding-left: 20px;
+    }
+    .news .col-7 p{
+        font-size: 12px;
+    }
+    .news .container{
+        max-width: 568px;
+    }
+    .news .row .col-1 .logo-cinema img{
+    width:75%;
+    }
+    .news .row .col-1{
+        padding-left: 15px;
+        padding-top: 30px;
+    }
+}
+@media (min-width: 320px) and (max-width: 568px) {
+    .news .col-3 p{
+        font-size:7px;
+        padding-left: 20px;
+    }
+    .news .col-7 p{
+        font-size: 9px;
+    }
+    .news .container{
+        max-width: 320px;
+    }
+    
+    .news .row .col-3 .cinema-info .cinema-img img{
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    .news .row .col-1 .logo-cinema img{
+        width: 60%;
+    }
+    .news .row .col-3 .cinema-info{
+        padding-left:0;
+    }
+    .news .row .col-1{
+        padding-left: 35px;
+        padding-top: 30px;
+    }
+}

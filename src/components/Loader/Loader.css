@@ -1,0 +1,96 @@
+.loading {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #282b3c;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+label {
+  font-family: "Source Code Pro", monospace;
+  padding: 10px 0;
+  color: white;
+}
+
+#loader {
+  position: relative;
+  overflow: hidden;
+  background-color: #232635;
+  width: 100px;
+  height: 10px;
+  border-radius: 10px;
+}
+
+#loader > div {
+  background-color: #fc00ff;
+  width: 100%;
+}
+
+#loader > div::before,
+#loader > div::after {
+  content: "";
+}
+
+#loader > div,
+#loader > div::before,
+#loader > div::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+#loader > div::before {
+  background-color: #00fffc;
+  -webkit-animation: comeOn 2s linear 0s infinite;
+          animation: comeOn 2s linear 0s infinite;
+}
+
+#loader > div::after {
+  background-color: #fffc00;
+  -webkit-animation: comeOn 1s linear 0s infinite;
+          animation: comeOn 1s linear 0s infinite;
+}
+
+@-webkit-keyframes comeOn {
+  0% {
+    width: 0px;
+    left: 0px;
+  }
+  50% {
+    left: 0px;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 0%;
+  }
+}
+
+@keyframes comeOn {
+  0% {
+    width: 0px;
+    left: 0px;
+  }
+  50% {
+    left: 0px;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 0%;
+  }
+}
+/*# sourceMappingURL=Loader.css.map */
