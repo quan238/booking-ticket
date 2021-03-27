@@ -1,6 +1,7 @@
 /* Header Section */
 .navigation {
   position: fixed;
+  top:0;
   width: 100%;
   height: 8%;
   display: flex;
@@ -88,17 +89,47 @@
 }
 /* Edn Header Section */
 
-@media screen and (min-width: 568px) {
-}
-@media screen and(min-width: 768px) {
-}
-
-@media screen and (min-width: 991px) {
-}
-
-@media screen and (min-width: 1200px) {
-  .menu li a {
-    // color: white;
-    font-size: 60px;
+//laptop
+@media (min-width: 991px) and (max-width: 1200px)  {
+  .navigation{
+  width: 992;
+  .login_location{
+    margin-right: 80px;
   }
+  .logo{
+    width:150px !important;
+  }
+  
+}
+}
+//tablet
+@media (min-width: 779px) and (max-width: 991px) {
+.menu{
+  display: none;
+}
+.login_location{
+  margin-right: 5px;
+}
+}
+//mobile phone
+@media (min-width: 568px) and (max-width: 779px) {
+.menu {
+  display: none ;
+}
+.login_location{
+    margin-right: 10px;
+  }
+}
+@media (min-width: 320px) and (max-width: 568px){
+.menu{
+  display: none;
+}
+.login_location .dropdown {
+  display: none;
+}
+
+.logo{
+  height: 100px;
+  margin-right: 5px;
+}
 }
