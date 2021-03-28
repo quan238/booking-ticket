@@ -9,6 +9,8 @@
   right: 0;
   width: 22%;
   height: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
   // box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
 }
 .rightCheckout .all-contents {
@@ -263,7 +265,7 @@
   .price {
     position: absolute;
     top: -105%;
-    left: 30%;
+    left: 38%;
     z-index: 999999999;
   }
   .rightCheckout .all-contents {
@@ -285,13 +287,16 @@
     .col-3 {
       display: flex;
     }
-
+    .payment {
+      font-size: 20px;
+      font-weight: 600;
+    }
     .contentcinema {
       margin-left: 0px;
       display: flex;
       flex-direction: column;
       white-space: nowrap;
-     
+
       // overflow: hidden;
       text-overflow: ellipsis;
       p {

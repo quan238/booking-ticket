@@ -118,9 +118,9 @@ class Login extends Component {
                 <button>Sign In</button>
 
                 <p style={{ paddingTop: "30px", marginBottom: "0" }}>
-                  Don't have the account?{" "}
+                 Default account: abcde | 123456 {"  "}
                   <Link exact to="/signup">
-                    Sign Up{" "}
+                    Sign Up
                   </Link>
                 </p>
               </Form>
