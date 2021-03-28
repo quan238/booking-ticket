@@ -88,7 +88,7 @@ class Film extends Component {
           breakpoint: 568,
           settings: {
             slidesToShow: 1,
-            rows: 1,
+            rows: 2,
             slidesToScroll: 1,
           },
         },
@@ -113,7 +113,7 @@ class Film extends Component {
       },
     };
     return (
-      <Slider {...settings} {...responsive}>
+      <Slider {...settings} >
         {this.renderItem()}
       </Slider>
     );

@@ -63,7 +63,8 @@
 .info-bottom h6 {
   margin-top: 15px;
   text-transform: uppercase;
-  font-weight: lighter;
+  // font-weight: lighter;
+  white-space: nowrap;
 }
 .info-bottom ul {
   list-style: none;
@@ -198,5 +199,11 @@
      }
     .info-bottom .col-4 h6 {
         font-size: 12px;
+    }
+    .row.mt-4 {
+      width: 100%!important;
+    }
+    .mcm{
+      // flex-direction: column;
     }
 }

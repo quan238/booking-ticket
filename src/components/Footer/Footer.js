@@ -8,7 +8,7 @@ export default class Footer extends Component {
         <footer>
           <div className="bot-container">
             <div className="info-bottom ">
-              <div className="row mt-4">
+              <div className="row mt-4 rowrow">
                 <div className="col-4 text-light">
                   <h6>About us</h6>
                   <ul>

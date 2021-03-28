@@ -35,7 +35,7 @@
   box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
 }
 .calendar .col-8 {
-  max-height: 910px;
+  max-height: 684px;
 }
 .calendar .cinema {
   display: flex;
@@ -66,7 +66,7 @@
 
 .calendar .chooseCinema {
   width: 100%;
-
+  max-height: none;
   height: 100%;
   overflow-y: auto;
   /* overflow-y: scroll; */
@@ -75,7 +75,7 @@
 .calendar .chooseTime {
   width: 100%;
   padding: 20px 20px 10px;
-  border-bottom: 1px solid #f0f0f1;
+  /* border-bottom: 1px solid #f0f0f1; */
   float: left;
 }
 .calendar .chooseTime .cinema-info {
